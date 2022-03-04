@@ -1,0 +1,45 @@
+#promorubrique .choix{
+	display:block;	
+}
+
+#promorubrique .titre_rub{
+	display:block;
+	border-bottom:1px solid #1d364e;
+	padding-bottom:5px;
+	margin-bottom:5px;
+}
+
+#promorubrique.inactif .choix,#promorubrique.inactif .titre_rub{
+	opacity: 0.35;
+	filter: alpha(opacity=35);
+}
+
+#promorubrique ul li{
+	max-width:280px;	
+}
+
+#promorubrique ul li em{
+	font-size:11px;
+}
+
+#promorubrique .niveau1{
+	margin-left:20px;	
+}
+
+#promorubrique .niveau2{
+	margin-left:40px;	
+}
+
+#promorubrique .niveau3{
+	margin-left:60px;	
+}
+
+#promorubrique .niveau4{
+	margin-left:80px;	
+}
+
+#promorubrique .oui_non{
+	margin-bottom:10px;
+	display:block;
+	clear:both;	
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Remise Vin</titre>
+    <chapo>Remise sur le panier a partir d un certain nombre de bouteilles</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Mathieu Ludwig</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.1</thelia>
+  <etat>production</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

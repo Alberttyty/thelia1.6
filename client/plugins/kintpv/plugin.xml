@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+    <descriptif lang="fr">
+        <titre>Import/Export avec KinTPV</titre>
+        <chapo></chapo>
+        <description>Importer et exporter des produits avec le logiciel KinTPV</description>
+        <postscriptum></postscriptum>
+    </descriptif>
+    <version>1.0</version>
+    <auteur>
+        <nom>Thierry Caresmel</nom>
+        <societe>Pixel Plurimédia</societe>
+        <email>thierry@pixel-plurimedia.fr</email>
+        <web>pixel-plurimedia.fr</web>
+    </auteur>
+    <type>classique</type>
+    <prerequis>
+        <plugin version="1.0">declibre</plugin>
+    </prerequis>
+    <thelia>1.5.0</thelia>
+    <etat>production</etat>
+    <urlmiseajour></urlmiseajour>
+</plugin>

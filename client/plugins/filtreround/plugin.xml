@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Nombres arrondis</titre>
+    <chapo>Nombres arrondis</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Thierry CARESMEL</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web>pixel-plurimedia.fr</web>
+  </auteur>
+  <type>filtre</type>
+  <prerequis/>
+  <thelia>1.5.1</thelia>
+  <etat>production</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

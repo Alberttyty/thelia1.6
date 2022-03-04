@@ -1,0 +1,143 @@
+#graph_accueil{
+	display:none;
+}
+
+.statistiques{
+	margin-top:10px;
+	margin-bottom:30px;	
+}
+
+.statistiques .graph img{
+	display:block;
+}
+
+.statistiques .graph{
+	position:relative;	
+	min-height:200px;
+}
+
+.statistiques .graph > a{
+	font-size:30px;
+	text-decoration:none;
+	font-weight:bold;
+	position:absolute;
+	display:inline-block;
+	width:auto;
+	top:-30px;
+	left:0px;
+}
+
+.statistiques .graph > a:hover{
+	color:black;	
+}
+
+.statistiques .graph > a.next{
+	right:0px;
+	left:auto;	
+}
+
+.statistiques form{
+	display:block;
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.statistiques form label{
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+	margin-left:10px;
+	margin-right:10px;
+	padding:5px 30px 5px 30px;
+	display:inline-block;
+	width:auto;
+	border:1px solid #D4DADD;
+	cursor:pointer;
+}
+
+.statistiques .donnees{
+	display:table;
+	width:100%;
+	box-sizing:border-box;
+	padding-left:11px;
+	padding-right:11px;
+	margin-bottom:30px;
+}	
+
+.statistiques .donnees > li{
+	display:table-cell;	
+	background-color:#EBEDEE;
+	padding:7px;
+}
+
+.statistiques .donnees > li:nth-child(2n){
+	display:table-cell;	
+	background-color:#D4DADD;
+	padding:7px;
+}
+
+.statistiques ol.donnees_liste{
+	padding-left:30px;	
+}
+
+.statistiques ol.donnees_liste.tout{
+	max-height:400px;
+	overflow-y:auto;
+	border:1px solid rgba(0,0,0,0.25);
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.statistiques ol > li{
+	list-style-type:decimal;
+	vertical-align:text-top;
+	margin-bottom:5px;
+	padding-bottom:5px;
+	border-bottom:1px solid rgba(0,0,0,0.15);
+}
+
+.statistiques ol li a{
+	font-weight:normal;
+	color:#1d364e;
+	text-decoration:none;
+}
+
+.statistiques ol li a:hover{
+	text-decoration:underline;
+}
+
+.statistiques .donnees_liste li ul{
+	display:table;
+	width:100%;	
+}
+
+.statistiques .donnees_liste li ul li{
+	display:table-cell;
+}
+
+.statistiques .donnees_liste li ul li:last-child{
+	width:80px;
+	padding-left:10px;
+}
+
+.statistiques .donnees_liste li ul li em{
+	font-size:11px;	
+}
+
+.statistiques h2{
+	font-size:16px;
+	margin-top:0px;
+}
+
+.statistiques h2 em{
+	font-size:11px;	
+}
+
+.statistiques .suite{
+	float:right;	
+}
+
+.donnees_33 > li{
+	width:33%;	
+}

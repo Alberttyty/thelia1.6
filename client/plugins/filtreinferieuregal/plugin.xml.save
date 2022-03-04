@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Inférieur ou égal</nom>
+ 	<version>1.0</version>
+ 	<prefix>inferieuregal</prefix>
+	<type>filtre</type>
+ 	<auteur>Mathieu Ludwig - mathieu@pixel-plurimedia.fr</auteur>
+ 	<thelia>1.5.1</thelia>
+ 	<description>Filtre inferieur ou egal</description>
+ 	<etat>production</etat>
+</plugin>

@@ -1,0 +1,8 @@
+Options +FollowSymlinks -Indexes
+RewriteEngine On
+RewriteBase /
+
+#EMPECHER LE CHANGEMENT DE SITE
+#######################################
+RewriteCond %{HTTP_HOST} !^(.*\.)*domain\.tld$ [NC]
+RewriteRule . - [R=404,L]

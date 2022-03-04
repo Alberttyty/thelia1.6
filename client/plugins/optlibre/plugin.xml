@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Options libres</titre>
+    <chapo>Ajout de champs options libres pour un produit.</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.1</version>
+  <auteur>
+    <nom>Mathieu Ludwig - Thierry CARESMEL</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

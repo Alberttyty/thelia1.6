@@ -1,0 +1,57 @@
+#PARAM_FOND_nopageret=1
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Inscription à la newsletter - #VARIABLE(nomsite)</title>
+<meta name="description" content="Inscription à la newsletter."/>
+<meta name="keywords" content="" />
+#INCLURE "template/inc-meta.html"
+</head>
+<body>	
+<TEST_erreur variable="#ENV{errform}" test="egal" valeur="1">
+<p class="retour">
+    <span class="erreur">
+    Une erreur a été rencontrée.
+    #FILTRE_egalite(#ENV{errcaptcha}||1||<br/>Erreur dans la saisie du code de vérification.)
+    #FILTRE_egalite(#ENV{erremail}||1||<br/>Erreur dans le format de l'adresse email.)
+    #FILTRE_egalite(#ENV{errliste}||1||<br/>Aucune liste sélectionnée.)
+    </span>
+</p>
+</TEST_erreur>
+<//TEST_erreur>
+<TEST_retour variable="#ENV{newsletter_supprime_ok}" test="egal" valeur="1">
+<p class="retour">
+    <span class="ok">
+    Votre désinscription a été prise en compte.
+    </span>
+</p>
+</TEST_retour>
+<form action="#URLFOND(newsletter_supprime)" method="post" name="newsletter_supprime" id="newsletter_supprime" class="formulaire formulaire_newsletter">
+	<ul>
+        <li class="centre">
+            <input type="hidden" name="action" value="newsletter_supprime" class="hidden"/>
+            Désinscription de :
+          	<THELIA_inscription type="NEWSLETTER" boucle="liste">
+            <input type="checkbox" id="liste_#ID" value="#ID" name="newsletter_liste[]" checked="checked"/> <label for="liste_#ID">#NOM</label><br/>
+            </THELIA_inscription>
+        </li>
+        <li class="centre">
+        	<label for="email">Adresse e-mail * :</label>
+       		<input name="email" id="email" type="text" class="champs_obligatoire" size="40" value="#CLIENT_EMAIL"/>
+        </li>
+        <li class="centre"><label for="txt_securite">Code de vérification * :</label>
+            #CAPTCHANEWSLETTER <img src="/template/images/fleche.png" alt="" class="fleche"/> 
+            <input type="text" name="txt_securite" id="txt_securite" size="5" class="champs_obligatoire petit txt_securite" value=""/>
+            <span class="legende">(recopier les 4 lettres)</span>
+        </li>
+    </ul>
+    <ul class="boutons">
+        <li class="bouton_centre">
+            <a class="bouton bouton_grand submit bouton_centre" href="#URLFOND(newsletter_supprime)"><span class="bouton_bg"><span class="bouton_icone bouton_icone_fleche"></span>Valider</span></a>
+        </li>
+    </ul>
+</form>
+<//TEST_retour>
+</body>
+</html>

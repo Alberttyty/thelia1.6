@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Déclinaisons libres</titre>
+    <chapo>Ce plugin permet de gérer des déclinaisons libres sur un produit avec un stock, prix, prix2 associés.
+	Une boucle vous permettra aussi de récupérer les déclinaisons libres associés au produit.</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Yoan De Macedo - yoan@octolys.fr</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

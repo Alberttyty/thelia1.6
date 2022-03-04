@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<descriptif lang="fr">
+		<titre>Titre H1</titre>
+		<chapo></chapo>
+		<description>
+			Plugin permettant de personnaliser le titre H1
+		</description>
+		<postscriptum></postscriptum>
+	</descriptif>
+	<version>1.0</version>
+	<auteur>
+		<nom>Mathieu LUDWIG</nom>
+		<societe>Pixel Plurimédia</societe> 
+		<email></email>
+		<web></web>
+	</auteur> 
+	<type>classique</type>
+	<prerequis/>
+	<thelia>1.5.0</thelia>
+	<etat>production</etat>
+	<documentation></documentation>
+	<urlmiseajour></urlmiseajour>
+</plugin>

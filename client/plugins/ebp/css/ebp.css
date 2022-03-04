@@ -1,0 +1,109 @@
+.retour{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px 50px 20px 50px;
+	background:#E0E0E0;
+	margin-top:30px;
+	margin-bottom:30px;
+	font-size:1.125em;
+}
+
+.retour .termine{
+	text-align:center;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:1.125em;
+}
+
+.retour li{
+	margin-bottom:20px;
+	display:block;
+}
+
+.retour .loader{
+	text-align:center;	
+}
+
+.retour li:last-child{
+	margin-bottom:0px;	
+}
+
+.retour .erreur{
+	display:block;
+	font-style:italic;	
+	font-size:75%;
+	text-align:center;
+	margin-top:5px;
+}
+
+.retour .erreur_liste{
+	padding:5px;
+	max-height:250px;
+	overflow:auto;
+	display:block;
+	background:#c9c9c9;
+	margin-top:10px;
+}
+
+.retour .ok{
+	text-align:center;	
+}
+
+.import_export{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px 50px 20px 50px;
+	background:#E0E0E0;
+	margin-top:30px;
+	margin-bottom:30px;
+	font-size:1.125em;
+	text-align:center;
+	display:table;
+}
+
+.import_export > div{
+	display:table-cell;
+	vertical-align:middle;	
+}
+
+.import_export > div:first-child{
+	width:100px;	
+}
+
+.chiffre{
+	font-size:3.5em;
+	font-weight:bold;
+}
+
+/********Accueil***********/
+
+.ebp_accueil{
+	display:table;
+	width:100%;	
+}
+
+.ebp_accueil > div{
+	display:table-cell;
+	with:50%;	
+}
+
+.ebp_accueil > div:first-child{
+	border-right:10px solid white;	
+}
+
+.ebp_accueil .import_export{
+	width:100%;
+	padding-left:0px;
+	padding-right:0px;
+	margin-top:0px;
+}
+
+.dernier_export{
+	display:block;
+	font-size:80%;
+	margin-top:20px;
+}
+
+/*********Fin accueil**********/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Commenter un contenu</nom>
+ 	<version>1.1</version>
+ 	<prefix>commentairescontenu</prefix>
+	<type>classique</type>
+ 	<auteur>Etienne Roudeix - etienne@octolys.fr</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>Ce plugin permet de gérer des commentaires sur les contenus.</description>
+	<rubrique>administration</rubrique>
+	<lien>http://contrib.thelia.net/contrib.php?prefixe=commentairescontenu</lien>
+	<documentation>Readme.txt</documentation>
+ 	<etat>production</etat>
+	<install>http://contrib.thelia.net/client/contrib/commentairescontenu.zip</install>
+</plugin>

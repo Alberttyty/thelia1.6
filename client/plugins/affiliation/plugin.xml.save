@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Affiliation</nom>
+ 	<version>1</version>
+ 	<prefix>affiliation</prefix>
+	<type>paiement</type>
+ 	<auteur>Mathieu Ludwig - Pixel Plurimédia</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>Stockage du site de provenance dans un cookie</description>
+ 	<etat>production</etat>
+</plugin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>CKEditor</nom>
+ 	<version>1.1</version>
+ 	<prefix>ckeditor</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Communication</auteur>
+ 	<thelia>1.4.4</thelia>
+ 	<description>Ce plugin ajoute l'éditeur WYSIWYG CKEditor (associé à l'outil de gestion de fichiers KCFINDER) dans différentes pages de l'interface d'administration</description>
+	<lien></lien>
+	<documentation></documentation>
+ 	<etat>developpement</etat>
+	<install></install>
+</plugin>

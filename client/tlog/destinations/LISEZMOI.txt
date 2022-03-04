@@ -1,0 +1,1 @@
+Ce répertoire est destiné à stocker des classes destination pour le système de log de Thelia.

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <descriptif lang="fr">
+    <titre>Date du jour</titre>
+    <chapo>Affiche la date du jour</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Thierry CARESMEL</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web>https://pixel-plurimedia.fr</web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

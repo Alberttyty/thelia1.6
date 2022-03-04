@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	#INCLURE "meta.html"
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body>
+
+<!-- wrapper & subwrapper -->
+	
+<div id="wrapper">
+	<div id="subwrapper">
+	
+	#INCLURE "entete.html"
+		
+<!-- chemin -->	
+		
+		<div id="chemin">
+		Vous &ecirc;tes ici :
+		<a href="index.php" class="LIEN_chemin">Accueil boutique</a> / 
+		Contenu de mon panier
+		</div>
+
+<!-- contenu -->
+	
+		<div id="content">
+		
+		#INCLURE"menu.html"
+		
+			<div id="contenu">
+			
+<!-- Titre de la page -->
+		
+				<div class="titrePage">
+				<h2>Contenu de mon panier</h2>
+				</div>
+				
+<!-- Contenu du panier -->
+
+			<table width="775" border="0" cellpadding="5" cellspacing="0" class="enteteTableau">
+  				<tr>
+    				<td width="365">R&eacute;f&eacute;rences produits</td>
+    				<td width="95">Prix unitaire</td>
+    				<td width="95">Quantit&eacute;</td>
+    				<td width="95">Total TTC</td>
+    				<td width="75" align="center">Vider</td>
+				</tr>
+			</table>
+
+			<table width="775" border="0" cellpadding="5" cellspacing="0">
+    		<THELIA_CONTENU_PANIER type="PANIER">
+				<tr>
+					<td width="365" class="ligneTableau">#REF #TITRE 
+					<THELIA_decval type="DECLIBRE" boucle="panier" article="#ARTICLE"> 
+					#DECLIBRE
+					<THELIA_titreval type="DECLIBRE" boucle="declinaison" id="#DECLIBRE">
+					#DECLINAISON
+					</THELIA_titreval>
+					</THELIA_decval></td>
+					<td width="95" class="ligneTableau">#PRIXU &euro; </td>
+    				<td width="95" class="ligneTableau">
+					<form action="#URLPANIER" method="post" name="formpanier#ARTICLE" id="formpanier#ARTICLE">
+                	<input type="hidden" name="article" value="#ARTICLE" />
+                	<input type="hidden" name="action" value="modifier" />
+
+                	<select name="quantite" size="1" class="zoneDeSaisie" onchange="document.formpanier#ARTICLE.submit()">
+					
+					
+					<T_decval>	
+					<THELIA_decval type="DECLIBRE" boucle="panier" article="#ARTICLE"> 
+							<THELIA_quantite type="QUANTITE" article="#ARTICLE" max="#STOCK">
+								<option value="#NUM" #SELECTED>#NUM</option>
+							</THELIA_quantite>
+					</THELIA_decval>
+					
+					</T_decval>
+							<THELIA_quantite type="QUANTITE" article="#ARTICLE">
+								<option value="#NUM" #SELECTED>#NUM</option>
+							</THELIA_quantite>
+					<//T_decval>
+			
+					
+					</select>
+					</form>
+					</td>
+					<td width="95" class="ligneTableau">#TOTAL &euro;</td>
+					<td width="75" align="center" class="ligneTableau"><a href="#SUPPRURL">Supprimer</a></td>
+				</tr>
+  	  		</THELIA_CONTENU_PANIER>
+			</table>
+			
+			<table width="775" border="0" cellpadding="5" cellspacing="0" class="enteteTableau">
+				<tr>
+					<td width="365">&nbsp;</td>
+					<td width="200" align="right">TOTAL DU PANIER :</td>
+    				<td width="180">#PANIER_TOTAL &euro;</td>
+    			</tr>
+			</table>
+			
+
+				<div class="boutonMonCompteContenu">
+				<a href="adresse.php">Valider mon panier</a>
+				</div>
+				<div class="boutonMonCompteContenu">
+				<a href="index.php">Retour boutique</a>
+				</div>
+		  	</div>
+		#INCLURE "pied.html"
+		</div>
+	</div>
+	#INCLURE "signature.html"
+</div>
+</body>
+</html>

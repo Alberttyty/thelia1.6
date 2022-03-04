@@ -1,0 +1,207 @@
+<!--
+	THELIA - Modèle de bon de livraison
+
+	Pour plus d'information sur les possibilités de mise en page, merci de consulter
+	la documentation de html2pdf: http://html2pdf.fr/
+-->
+
+<style type="text/css">
+<!--
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,th {
+		padding: 1.5mm;
+		border: 0.2mm solid #333;
+	}
+
+	th {
+		background-color: #D83C46;
+		color: #fff;
+
+		text-align: center;
+		font-weight: normal;
+	}
+
+	td.total {
+		background-color: #ccc;
+		font-weight: bold;
+	}
+-->
+</style>
+
+<page backtop="10mm" backleft="10mm" backright="10mm" backbottom="10mm">
+
+    <page_header>
+    </page_header>
+
+    <page_footer>
+    	<table>
+		<col style="width: 80%; padding: 3mm; border: none; text-align: center;" />
+		<col style="width: 20%; padding: 3mm; border: none; text-align: right;" />
+		<tbody>
+	   		<tr>
+    			<td><!-- Insérer ici les mentions légales --></td>
+    			<td>::Page:: [[page_cu]]/[[page_nb]]</td>
+	    	</tr>
+		</tbody>
+    	</table>
+    </page_footer>
+
+	<THELIA_facture type="commande" ref="#COMMANDE_REF">
+		<THELIA_devise type="devise" id="#DEVISE">
+			#SET{devise,#SYMBOLE}
+		</THELIA_devise>
+
+	<!-- En-tete du document -->
+    <table style="padding-bottom: 5mm;">
+
+		<col style="width:50%; padding: 0; border: none;" />
+		<col style="width:50%; padding: 0; border: none;" />
+
+        <tr>
+        	<!-- A gauche: informations sur le BL -->
+
+            <td valign="bottom">
+
+				<div style="text-align: center; padding-bottom: 5mm;">
+					<h1 style="font-size: 5mm;">
+						#VARIABLE(nomsite)
+						<!-- Vous pouvez remplacer #VARIABLE(nomsite) par le nom de votre entreprise -->
+					</h1>
+
+					<!--
+					<p> Vous pouvez insérer ici l'adresse de votre entreprise</p>
+					-->
+
+					<h2 style="font-size: 5mm;">::Bon de livraison<br />N°:: #LIVRAISON</h2>
+				</div>
+
+				<table style="width: 80%">
+					<col style="width:50%;text-align: center;" />
+					<col style="width:50%;text-align: center;" />
+
+					<tr>
+						<th>::N° Commande::</th>
+						<th>::Date::</th>
+					</tr>
+
+					<tr>
+						<td>#REF</td>
+						<td>#DATE</td>
+					</tr>
+				</table>
+
+				<table style="width: 80%; margin-top: 3mm;">
+					<col style="width:50%;text-align: center;" />
+					<col style="width:50%;text-align: center;" />
+					<tr>
+						<th>::N° Facture::</th>
+						<th>::N° Client::</th>
+					</tr>
+
+					<tr>
+						<td>#FACTURE</td>
+						<td><THELIA_client type="client" id="#CLIENT">#REF</THELIA_client></td>
+					</tr>
+				</table>
+			</td>
+
+			<!-- A droite: adresses de livraison et de facturation -->
+
+            <td valign="bottom">
+
+				<table style="padding-bottom: 5mm;">
+					<tr>
+						<th style="width: 100%; text-align: left;">::Adresse de livraison::</th>
+					</tr>
+
+					<tr>
+						<td>
+		            		<THELIA_adrlivr type="venteadr" id="#ADRLIVR">
+		            		#RAISON #PRENOM #NOM<br />
+		            		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+		            		#CPOSTAL #VILLE<br/>
+		            		<THELIA_payslivr type="PAYS" id="#PAYS">#TITRE</THELIA_payslivr>
+		            		</THELIA_adrlivr>
+						</td>
+					</tr>
+				</table>
+
+				<table>
+					<tr>
+						<th style="width: 100%; text-align: left;">::Adresse de facturation::</th>
+					</tr>
+
+					<tr>
+						<td>
+		            		<THELIA_adrfact type="venteadr" id="#ADRFACT">
+		            		#RAISON #PRENOM #NOM<br />
+		            		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+		            		#CPOSTAL #VILLE<br/>
+		            		<THELIA_paysfact type="PAYS" id="#PAYS">#TITRE</THELIA_paysfact>
+		            		</THELIA_adrfact>
+						</td>
+					</tr>
+				</table>
+			</td>
+         </tr>
+    </table>
+
+	<!-- Liste des articles -->
+
+    <table>
+
+	    <col style="width: 20%;" />
+	    <col style="width: 65%;" />
+	    <col style="width: 15%; text-align: right" />
+      	<thead>
+            <tr>
+                <th style="text-align: center;">::Référence::</th>
+                <th style="text-align: center;">::Désignation::</th>
+                <th style="text-align: center;">::Qté::</th>
+             </tr>
+        </thead>
+
+        <tbody>
+         	<THELIA_articles type="venteprod" commande="#ID">
+	            <tr>
+	            	<td>#REF</td>
+					<td>#TITRE</td>
+					<td>#QUANTITE</td>
+				</tr>
+			</THELIA_articles>
+        </tbody>
+    </table>
+
+	<!-- Mode de livraison -->
+
+	<table style="width: 100%; margin-top: 5mm;">
+   		<col style="width: 20%;" />
+  		<col style="width: 80%;" />
+		<tbody>
+			<tr>
+				<th>::Mode de livraison::</th>
+				<td>#TRANSPORTTITRE</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Zone de correspondance -->
+
+	<table style="width: 100%; margin-top: 5mm;">
+    	<col style="width: 100%;" />
+		<tbody>
+			<tr>
+				<th>::Zone de correspondance::</th>
+			</tr>
+			<tr>
+				<td style="height: 20mm;"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	</THELIA_facture>
+</page>

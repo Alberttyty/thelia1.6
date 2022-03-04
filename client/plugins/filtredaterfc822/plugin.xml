@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Filtre Date RFC-822</titre>
+    <chapo></chapo>
+    <description>Ce plugin est un petit filtre qui permet d’afficher la date d’un contenu en RFC-822.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Karim Belkacem - ergonomind@gmail.com</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

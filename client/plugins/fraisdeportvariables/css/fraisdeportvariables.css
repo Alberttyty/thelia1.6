@@ -1,0 +1,11 @@
+form.fraisdeportvariables span.edition span.input{
+	display:none;
+}
+
+form.fraisdeportvariables input[type="submit"]{
+	margin-left:10px;	
+}
+
+form.fraisdeportvariables a{
+	margin-left:10px;
+}

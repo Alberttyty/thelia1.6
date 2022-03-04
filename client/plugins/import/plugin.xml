@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Import produits en masse</titre>
+    <chapo></chapo>
+    <description>Importer les produits Thelia en masse</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Gil Fourgeaud</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <urlmiseajour></urlmiseajour>
+</plugin>

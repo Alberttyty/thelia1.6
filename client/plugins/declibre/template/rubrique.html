@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	#INCLURE "meta.html"   
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body>
+
+<!-- wrapper & subwrapper
+-->
+	
+<div id="wrapper">
+	<div id="subwrapper">
+	
+	#INCLURE "entete.html"
+		
+<!-- chemin-->	
+		
+		<div id="chemin">
+			Vous &ecirc;tes ici :
+			<a href="index.php" class="LIEN_chemin">Accueil boutique</a> / 
+			<THELIA_chemrub type="CHEMIN" rubrique="#RUBRIQUE_ID">
+			<THELIA_rubdetchem type="RUBRIQUE" id="#ID">
+			<a href="#URL" class="LIEN_chemin">#TITRE</a> /
+			</THELIA_rubdetchem>
+			</THELIA_chemrub>
+			#RUBRIQUE_NOM
+			
+		</div>
+		
+			
+<!-- contenu-->
+	
+		<div id="content">
+		
+		#INCLURE"menu.html"
+		
+			<div id="contenu">
+			
+<!-- Titre de la rubrique-->
+
+				<div class="titrePage">
+				<h2>#RUBRIQUE_NOM</h2>
+				</div>
+
+			
+<!-- Liste des produits de la rubrique-->
+
+				<div class = "ListeProduitsPetits">
+ 				<THELIA_PROD type="PRODUIT" rubrique="#RUBRIQUE_ID" classement="inverse" num="12">
+					<div class="produitPetit">
+					<a href="#URL">
+					<THELIA_IMAGE type="IMAGE" num="1" produit="#ID"  largeur="159">
+ 					<img src="#IMAGE"  alt="#PRODTITRE  " title="#PRODTITRE  " border="0" class="contourImage" />
+					</THELIA_IMAGE>
+                    </a>
+						<div class="titreProduit">					
+						<h3><a href="#URL">#TITRE</a></h3>
+						</div>
+						<div class="chapoProduit">
+						#CHAPO
+						</div>
+				    	<div class="prixProduit">
+						<T_dec>	
+							A partir de #PRIX &euro;
+							
+							<THELIA_dec type="DECLIBRE" boucle="declinaison" ref="#REF">
+							
+							</THELIA_dec>
+
+							</T_dec>
+							#PRIX &euro;
+								
+							<//T_dec>
+
+						</div>
+				    <a href="#URL" class="LIEN_commander">En savoir + </a>	
+					</div> 
+				</THELIA_PROD>
+				</div>
+				
+				
+<!-- Page suivante / Nombre de page / Page précdédente-->
+	
+				<div id="pages">
+					<THELIA_PAGEPREC type="PAGE" rubrique="#RUBRIQUE_ID" num="12" typeaff="0" avance="precedente">
+					<a href="rubrique.php?id_rubrique=#RUBRIQUE_ID&amp;page=#PAGE_PREC" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+					</THELIA_PAGEPREC>
+					
+					<THELIA_CPAGE type="PAGE" rubrique="#RUBRIQUE_ID"  num="12" max="10" typeaff="1">
+					|
+                	<THELIA_PAGECONT_PASCOUR type="PAGE" rubrique="#RUBRIQUE_ID"  num="12" courante="0" pagecourante="#PAGE_NUM" max="10" typeaff="1"> 
+					 <a href="rubrique.php?id_rubrique=#RUBRIQUE_ID&amp;page=#PAGE_NUM" class="LIEN_pages">#PAGE_NUM</a>
+					</THELIA_PAGECONT_PASCOUR> 
+				    <THELIA_PAGECONT_COUR type="PAGE" rubrique="#RUBRIQUE_ID" num="12" courante="1" pagecourante="#PAGE_NUM" max="10" typeaff="1"> 
+					#PAGE_NUM
+					</THELIA_PAGECONT_COUR>  
+					</THELIA_CPAGE>	
+					
+					 
+					<THELIA_PAGE_SUIVANTE type="PAGE" rubrique="#RUBRIQUE_ID" num="12" max="10" typeaff="0" avance="suivante"> 
+					| <a href="rubrique.php?id_rubrique=#RUBRIQUE_ID&amp;page=#PAGE_SUIV" class="LIEN_pages">Page suivante</a>
+					</THELIA_PAGE_SUIVANTE>
+				</div>		
+			</div>
+			#INCLURE "pied.html"
+		</div>
+	</div>
+	#INCLURE "signature.html"
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>TNT</titre>
+    <chapo></chapo>
+    <description>Module de livraison TNT</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0.0</version>
+  <auteur>
+    <nom>Thierry Caresmel</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web>pixel-plurimedia.fr</web>
+  </auteur>
+  <type>transport</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+  <documentation>readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

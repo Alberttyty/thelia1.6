@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Personnalisation</nom>
+ 	<version>1.0</version>
+ 	<prefix>personnalisation</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Communication</auteur>
+ 	<thelia>1.4.0</thelia>
+ 	<description>Ajout d'information de personnalisation à un produit.</description>
+	<lien></lien>
+	<documentation></documentation>
+ 	<etat>production</etat>
+	<install></install>
+</plugin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Meilleures ventes</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet d'afficher les meilleures ventes.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.3.1</version>
+  <auteur>
+    <nom>Laurent - elcanux@gmail.com</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.1</thelia>
+  <etat>attente</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

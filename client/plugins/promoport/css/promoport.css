@@ -1,0 +1,20 @@
+#promoport{
+	display:none;
+}
+#promoport.actif{
+	display:block;	
+}
+
+#promoport .choix{
+	display:block;	
+}
+
+#promoport ul li{
+	max-width:280px;	
+}
+
+#promoport .oui_non{
+	margin-bottom:10px;
+	display:block;
+	clear:both;	
+}

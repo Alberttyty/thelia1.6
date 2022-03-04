@@ -1,0 +1,9 @@
+#bloc_description form.revuedepresse .flag,#bloc_description form.revuedepresse .flagSelected{
+	float:left;
+	margin-right:3px;
+	margin-left:3px;
+}
+
+#bloc_description form.revuedepresse .flagSelected{
+	border: 3px solid #62BD19;
+}

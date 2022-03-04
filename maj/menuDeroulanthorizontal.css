@@ -1,0 +1,68 @@
+/* CSS Document */
+
+dt, dl, dd, ul, li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#menuHorizontal {
+	left: 5px;
+	top: 15px;
+	background-image: url(gfx/fondMenuHorizontal.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 734px;
+	height: 60px;
+	padding-top: 14px;
+	padding-left: 26px;
+	position: relative;
+}
+
+/* menu */
+
+#menuHorizontal dl {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-right: 15px;
+}
+
+#menuHorizontal dl a {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+/* sous-menu */
+
+#menuHorizontal li {
+	display: inline;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#menuHorizontal li a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ec8000;
+	margin-right: 10px;
+}
+
+#menuHorizontal a {
+	text-decoration: none;
+}
+
+#menuHorizontal a:hover {
+	text-decoration: underline;
+}
+
+#smenu1, #smenu2, #smenu3, #smenu4 {
+	position: absolute;
+	left: 0;
+	font-size: 11px;
+	text-transform: none;
+	margin-top: 32px;
+	width: 744px;
+	padding-left: 16px;
+}

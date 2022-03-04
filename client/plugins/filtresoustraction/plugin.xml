@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Filtre soustraction</titre>
+    <chapo>Ce filtre permet d'effectuer une soustraction.</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Yoan De Macedo - yoan@octolys.fr</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>filtre</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

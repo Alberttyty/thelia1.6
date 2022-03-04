@@ -1,0 +1,100 @@
+/**********Definitions generales***********/
+
+@-ms-viewport{
+  width: device-width;
+  zoom: 1;
+}
+
+html {
+font-size: 100%;
+height:100%;
+}
+
+body {
+height:100%;
+margin: 0;
+padding: 0;
+text-align: left;
+font-size: 1em;
+color:black;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+}
+
+div,header,footer,section,hgroup,aside,nav,article,figure,figcaption,time,dialog{
+display: block;
+}
+
+div,ul,ol,li,table,th,td,h1,h2,h3,h4,h5,h6,p,span,form,img,input,header,footer,section,hgroup,aside,nav,article,figure,figcaption,time,dialog{
+margin: 0;
+padding: 0;
+font-size: 1em;
+text-align: inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+}
+
+ul{
+list-style:none;
+}
+
+a{
+text-decoration:none;
+outline:none;
+color:inherit;
+}
+
+.nettoyeur{
+clear:both;
+font-size:0px;
+line-height:0px;
+height:0px;
+}
+
+object {
+outline:none;
+}
+
+img {
+border:none;
+}
+
+button::-moz-focus-inner {
+border: 0;
+}
+
+fieldset{
+margin: 0;
+padding: 0;
+border: none;
+}
+
+span.spip_surligne{
+background:none;
+}
+
+.on{
+font-weight:normal;
+}
+
+.menu_responsive,.menu_responsive_close{
+display:none;
+}
+
+.forcer_justifier{
+width:100% !important;
+height:1px !important;
+line-height:1px !important;
+font-size:1px !important;
+padding:0px 0px 0px 0px !important;
+margin:0px 0px 0px 0px !important;
+}
+
+.relative { position: relative; }
+.img-fluid {
+    display: block;
+    max-width: 100%;
+}
+    .center .img-fluid { margin-left: auto; margin-right: auto; }

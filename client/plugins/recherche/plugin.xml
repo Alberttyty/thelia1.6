@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Recherche améliorée</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet une recherche dans vos produits, rubriques ou contenus. Les mots saisis par votre client sont normalisés, ce qui permet d'obtenir de meilleurs résultats de recherche</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.2.4</version>
+  <auteur>
+    <nom>Franck Allimant - thelia@allimant.org</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation>LISEZMOI.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

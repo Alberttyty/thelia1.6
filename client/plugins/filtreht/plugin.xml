@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Filtre HT</titre>
+    <chapo></chapo>
+    <description>Mettre en HT</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1</version>
+  <auteur>
+    <nom>Mathieu Ludwig</nom>
+    <societe>Pixel Plurimédia</societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

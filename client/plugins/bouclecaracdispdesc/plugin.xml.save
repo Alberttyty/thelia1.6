@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Bouclecaracdispdesc</nom>
+ 	<version>1.1</version>
+ 	<prefix>bouclecaracdispdesc</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>Bouclecaracdispdesc</description>
+	<rubrique>administration</rubrique>
+	<documentation>Readme.txt</documentation>
+ 	<etat>production</etat>
+</plugin>

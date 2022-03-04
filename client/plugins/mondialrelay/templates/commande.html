@@ -1,0 +1,129 @@
+#PARAM_FOND_securise=1 #PARAM_FOND_panier=1 #PARAM_FOND_transport=1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  #INCLURE "template/meta.html"
+
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="subwrapper">
+  #INCLURE "template/entete.html"
+    <div id="chemin">::navigation:: :<a href="#URLSOMMAIRE">::accueil::</a> / ::recapitulatifcommande::</div>
+    #INCLURE "template/menu.html"
+    <div id="contenu">
+      <div id="etapesDeCommande">
+        <ul>
+                    <li><span>1</span>::panier::</li>
+                    <li><span>2</span>::facturationlivraison::</li>
+                    <li class="selection"><span class="chiffreSelection">3</span>::verifcommande::</li>
+                    <li><span>4</span>::paiementsecurise::</li>
+        </ul>
+      </div>
+      <h2>::recapitulatifcommande:: </h2>
+            <form action="#URLFOND(commande)" id="formulaire" method="post">
+            <input type="hidden" name="action" value="codepromo" />
+            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+              <tr>
+                <th colspan="2">::nomarticle::</th>
+                <th align="center">::prixunitaire:: </th>
+                 <th align="center">::quantite::</th>
+                 <th align="center">::total::</th>
+               </tr>
+              <THELIA_panier type="PANIER">
+              <tr>
+                    <td class="ligne">
+                        <THELIA_IMAGE type="IMAGE" num="1" produit="#ID"  largeur="80">
+                        <img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+                        </THELIA_IMAGE>
+                    </td>
+                    <td class="ligne">#TITRE - #REF</td>
+                    <td align="center" class="ligne">#PRIXU €</td>
+                  <td align="center" class="ligne">#QUANTITE</td>
+                  <td align="center" class="ligne">#TOTAL €</td>
+              </tr>
+            </THELIA_panier>
+            <tr>
+              <th colspan="4">::fraislivraison:: </th>
+              <th align="center">#PANIER_PORT €</th>
+            </tr>
+            #FILTRE_different(#PANIER_REMISE||0||
+            <tr>
+              <td colspan="4">::remise:: </td>
+              <td align="center">#PANIER_REMISE €</td>
+            </tr>)
+      #FILTRE_egalite(#PANIER_REMISE||0||
+            <tr>
+        <td colspan="5">
+        <p class="derniereLigne"><label class="codeDeReduction">::codereduc::</label>
+        <input name="code" type="text" class="codeDeReduction"/>
+        <button type="submit" class="boutonMemeLigneQuInput"><span><span>OK</span></span></button>
+        </p>
+        </td>
+            </tr>)
+            <tr>
+              <th colspan="4">::total::</th>
+              <th align="center" class="total">#PANIER_TOTPORT €</th>
+            </tr>
+            </table>
+            </form>
+       <div class="adresseDeLivraisonRecap">
+        <h3>::adresselivraison::</h3>
+
+<REM> -- DEBUT MODIF Mondial Relay -------------------------------------- </REM>
+
+        <T_adrelay>
+          	<div class="contenu">
+				<script type="text/javascript">
+	   				function show_relay(url) {
+	   					window.open(url, "mondialrelay", 'width=772,height=570,status=0,menubar=0,location=0,titlebar=0');
+	   				}
+	   			</script>
+
+	          	<THELIA_adrelay type="mondialrelay" nom="adresserelay" >
+	            	Livraison au point relais Mondial Relay n° #NUM<br />
+	           			#NOM<br />
+	           			#ADRESSE3<br />
+	           			#CP #VILLE<br />
+	                   <iframe width="390" height="230" src="#URLPLAN" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+						<br />
+	                   <a href="#DETAILPR" onclick="show_relay('#DETAILPR'); return false;">Détails pratiques</a>
+	           	</THELIA_adrelay>
+            </div>
+        	<a href="#URLPREC" class="modifierOuAjouter">Choisir un autre point relais ou un autre type de livraison.</a>
+        </T_adrelay>
+           <div class="contenu">
+                  <THELIA_adrcours type="adresse" adresse="#ADRESSE_ACTIVE">
+                  #RAISON #PRENOM #NOM	<br />
+                  #ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+                  #CPOSTAL #VILLE<br/>
+                  <THELIA_pays type="PAYS" id="#PAYS">
+                  #TITRE
+                  </THELIA_pays>
+                  </THELIA_adrcours>
+                </div>
+          <a href="#URLPREC" class="modifierOuAjouter">::modifadresse::</a>
+        <//T_adrelay>
+
+<REM> -- FIN MODIF Mondial Relay ---------------------------------------- </REM>
+
+        <a href="#URLPREC" class="modifierOuAjouter">::modifadresse::</a>
+      </div>
+    </div>
+    <div id="contenu">
+      <h2>::choixmodepaiement:: </h2>
+      <div class="choixDuReglement">
+              <ul>
+          <THELIA_PAIEMENT type="PAIEMENT">
+          <li><a href="#URLPAYER"><span class="modeDeReglement">#TITRE</span><span class="choisir">::choixmodepaiement2::</span></a></li>
+        </THELIA_PAIEMENT>
+                </ul>
+      </div>
+    </div>
+    #INCLURE "template/pied.html"
+    #INCLURE "template/signature.html"
+  </div>
+</div>
+</body>
+</html>

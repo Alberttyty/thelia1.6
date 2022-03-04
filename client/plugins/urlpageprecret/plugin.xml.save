@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Urlpageprecret</nom>
+ 	<version>1</version>
+ 	<prefix>urlpageprecret</prefix>
+	<type>paiement</type>
+ 	<auteur>Mathieu Ludwig - Pixel Plurimédia</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>URLPAGEPRECRET pour un retour à la page précédente.</description>
+ 	<etat>production</etat>
+</plugin>

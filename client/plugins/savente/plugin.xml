@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Service Après-Vente</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet d'effectuer un échange de produit sur une commande.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>0.9</version>
+  <auteur>
+    <nom>Thierry Caresmel</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

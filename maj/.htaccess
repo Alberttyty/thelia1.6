@@ -1,0 +1,8 @@
+Options +FollowSymlinks -Indexes
+RewriteEngine On
+RewriteBase /
+
+#CHANGER POUR MAJ UN SITE
+#RewriteCond %{HTTP_HOST} !^(.*\.)*boutique\.scorpionsmulhouse\.fr$ [NC]
+
+RewriteRule . - [R=404,L]

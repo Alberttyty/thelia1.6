@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Verifprix</nom>
+ 	<version>1.1</version>
+ 	<prefix>verifprix</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Communication</auteur>
+ 	<thelia>1.4.4</thelia>
+ 	<description>Vérifier si prix à 0 lors de l'enregistrement d'une fiche</description>
+	<lien></lien>
+	<documentation></documentation>
+ 	<etat>developpement</etat>
+	<install></install>
+</plugin>

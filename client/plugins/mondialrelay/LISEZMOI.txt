@@ -1,0 +1,222 @@
+PLUGIN MONDIAL RELAY
+--------------------
+
+Ce plugin permet de mettre en oeuvre la solution Mondial Relay sur votre
+boutique Thelia 1.5.1 ou supérieure.
+
+Vous devrez configurer le plugin dans le back-office, ainsi qu'apporter des
+modifications dans vos templates front-office.
+
+
+AUTEURS
+-------
+
+Benoît PASCAL - benoit@benoitpascal.fr
+Franck Allimant, CQFDev - http://www.cqfdev.fr
+
+Merci à Ineolab (http://www.ineolab.fr) pour son soutient dans la mise à niveau
+du plugin.
+
+INSTALLATION
+------------
+
+Pour une première installation, installez le plugin via FTP ou depuis le B.O.,
+et activez-le.
+
+Pour une mise à jour depuis une version précédente, vous devez:
+
+1) désactivez le plugin Mondial Relay depuis le B.O.
+2) supprimer le plugin (via FTP ou le B.O.). Veillez à garder quelque part votre
+   fichier config.php, pour pouvoir retrouver vos paramètres...
+3) installer la nouvelle version et l'activer.
+
+Vous ne perdrez pas votre historique de transport Mondial Relay.
+
+
+CONFIGURATION
+-------------
+
+Vous devez configurer le plugin dans le back-office -> Modules -> Mondiual Relay.
+Indiquez les informations demandées, elles sont nécessaires pour un bon
+fonctionnement des éxpéditions.
+
+Seul Adresse (suite 1) et Téléphone mobile peuvent être ommis, les autres
+informations doivent être indiquées.
+
+N'oubliez pas d'associer le plugin Mondial Relay à au moins une zone de transport
+dans le B.O. -> Configuration -> Gestion des types de transport.
+
+Un message est expédié à vos clients lorsque leurs commandes passent à l'état
+expédié. Ce message peut être configuré dans le B.O. -> Configuration -> Gestion
+des messages -> Mail d'expédition Mondial Relay.
+
+Pour mettre à jour les tarifs, merci de modifier la méthode calcule() du fichier
+Mondialrelay.class.php
+
+
+UTILISATION
+-----------
+
+Sur la fiche commande, vous retrouvez les informations complètes sur le point
+relais choisi par vos clients dans le cadre "TRANSPORT PAR MONDIAL RELAY".
+
+Vous pouvez demander l'expédition de la commande en cliquant sur "Expédier la
+commande". Ceci fait, un numéro de colis est attribué à la commande.
+
+  /!\ La demande d'expédition peut parfois échouer, et un message d'erreur est
+      affiché. Merci de la transmettre au développeur du plugin pour aider
+      à résoudre le problème.
+
+Vous pouvez alors télécharger l'étiquette que vous pourrez imprimer et placer
+sur vos colis.
+
+Vous pouvez aussi suivre le colis grâce au lien de suivi.
+
+Si nécessaire, vous pouvez à nouveau demander une expédition, en cliquant sur
+Ré-expédier.
+
+Passez ensuite la commande à l'état "Envoyé". Un mail récapitulant les informations
+sur le point relais et le suivi colis est alors expédié à votre client.
+
+Merci de noter que seule la destination France (FR) est supportée pour le moment.
+
+
+INTEGRATION EN FRONT OFFICE
+---------------------------
+
+Pour une intégration immédiate dans un template standard, vous trouverez les
+fichiers adresse.html, commande.html et commande_detail.html pré-modifiés pour
+la prise en compte de Mondial Relay.
+
+Vous trouverez facilement les modification qui figurent entre des balises
+DEBUT MODIF Mondial Relay et FIN MODIF Mondial Relay.
+
+Ces templates pré-modifiés vous proposent un affichage des points relais sur une
+carte Google Maps.
+
+Pour une intégration manuelle, la marche à suivre est la suivante:
+
+1) Mettre en place une boucle dans le fichier adresse.html comme ci-dessous :
+
+	<THELIA_transport type="TRANSPORT" nom="mondialrelay">
+		<li>
+			<a href="#" onclick="return false;">
+				<span class="modeDeLivraison">#TITRE / #PORT &euro;</span>
+				<span class="choisir">Listes des Points Relais</span>
+			</a>
+		</li>
+
+ 		<T_relaycolis>
+			<script type="text/javascript">
+
+				function show_relay(url) {
+					window.open(url, "mondialrelay", 'width=772,height=570,status=0,menubar=0,location=0,titlebar=0');
+				}
+
+				function check_selection_relais() {
+					if ($('input[name=num_relay]:checked').length == 0) {
+						alert("Merci de choisi un des points relais.");
+
+						return false;
+					}
+
+					return true;
+				}
+			</script>
+
+			<form action="#URLCMD" method="post" enctype="multipart/form-data" id="relaycolis" onsubmit="return check_selection_relais();">
+				<table>
+					<THELIA_relaycolis type="mondialrelay" nom="mondialrelay" num="5">
+					<tr>
+						<td><label for="NUM">#NOM, #ADRESSE3, #CP #VILLE</label></td>
+						<td>
+							<input type="radio" id="#NUM" value="#NUM" name="num_relay"/>
+						</td>
+						<td>(<a href="#DETAILPR" onclick="show_relay('#DETAILPR'); return false;">Détails</a>)</td>
+					</tr>
+					</THELIA_relaycolis>
+				</table>
+
+				<input  type="submit" id="submit_relaycolis" value="Choisissez votre Relais"/>
+			</form>
+		</T_relaycolis>
+			<p>Nous n'avons pas trouvé de relais colis dans votre zone de livraison.</p>
+		<//T_relaycolis>
+	</THELIA_transport>
+
+	<THELIA_transport type="TRANSPORT" exclusion="mondialrelay">
+		<li><a href="#URLCMD"><span class="modeDeLivraison">#TITRE / #PORT €</span><span class="choisir">::modelivraison::</span></a></li>
+	</THELIA_transport>
+
+
+Vous pouvez mettre en place un formulaire pour afficher les points relais suivant
+le code postal choisi par vos clients :
+
+	<form action="#VARIABLE(urlsite)">
+		<input type="hidden" name="fond" value="adresse" value="" />
+		<input type="hidden" name="action" value="recherche_cp" value="" />
+		<div>
+			Trouver un point relais pour le code postal: <input type="text" name="cp_relay" value="" />
+			<input type="submit" value="Rechercher" />
+		</div>
+	</form>
+
+
+2) Modifiez le fichier commande.html pour afficher l'adresse de livraison du
+   point relais avant la confirmation de la commande :
+
+	<T_adrelay>
+		<div class="contenu">
+			<THELIA_adrelay type="mondialrelay" nom="suivirelay" >
+				Livraison au point relais Mondial Relay n° #NUM<br />
+    			#NOM<br />
+    			#ADRESSE3<br />
+    			#CP #VILLE
+    		</THELIA_adrelay>
+    	</div>
+    	<a href="#URLPREC" class="modifierOuAjouter">Choisir un autre point relais ou un autre type de livraison</a>
+	</T_adrelay>
+		<div class="contenu">
+    		<THELIA_adrcours type="adresse" adresse="#ADRESSE_ACTIVE">
+    		#RAISON #PRENOM #NOM	<br />
+    		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+    		#CPOSTAL #VILLE<br/>
+    		<THELIA_pays type="PAYS" id="#PAYS">
+    		#TITRE
+    		</THELIA_pays>
+    		</THELIA_adrcours>
+    	</div>
+		<a href="#URLPREC" class="modifierOuAjouter">::modifadresse::</a>
+	<//T_adrelay>
+
+3) Vous pouvez modifier commande_detail.html pour permettre à vos clients de
+   retrouver le point relais choisi, et de suivre la livraison de leur colis:
+
+	<script type="text/javascript">
+	function popup_mondialrelay(url) {
+		window.open(url, "mondialrelay", 'width=772,height=570,status=0,menubar=0,location=0,titlebar=0');
+	}
+	</script>
+
+	<THELIA_adrelay type="mondialrelay" nom="adresserelay" commande="#COMMANDE_ID">
+		Livraison au point relais Mondial Relay n° #NUM<br />
+		#NOM<br />
+		#ADRESSE3<br />
+		#CP #VILLE<br />
+		<a href="#DETAILPR" onclick="popup_mondialrelay('#DETAILPR'); return false;">Détails pratiques</a><br />
+		<TEST_suivi var="#SUIVI" test="nonvide">
+			<a href="#SUIVI" onclick="popup_mondialrelay('#SUIVI'); return false;">Suivre votre colis</a><br />
+		</TEST_suivi><//TEST_suivi>
+
+		<iframe width="390" height="230" src="#URLPLAN" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+	</THELIA_adrelay>
+
+
+HISTORIQUE
+----------
+
+12/09/2012 : 2.0.0 : Refonte du plugin, et correction des problèmes résiduels.
+18/09/2012 : 2.0.1 : Compatibilité PHP 5.2
+18/09/2012 : 2.0.2 : Corrections de bugs sur boucle();
+--
+Fin du fichier LISEZMOI.txt

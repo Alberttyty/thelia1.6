@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Format Chemin Racine</nom>
+ 	<version>1.0</version>
+ 	<prefix>cheminracine</prefix>
+	<type>filtre</type>
+ 	<auteur>Mathieu Ludwig - mathieu@pixel-plurimedia.fr</auteur>
+ 	<thelia>1.5.1</thelia>
+ 	<description>Donne le chemin d'un fichier sur le serveur</description>
+ 	<etat>production</etat>
+</plugin>

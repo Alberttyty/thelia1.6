@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Colissimo</nom>
+ 	<version>1.1</version>
+ 	<prefix>colissimo</prefix>
+	<type>transport</type>
+ 	<auteur>Yoan De Macedo - yoan@octolys.fr</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>Gesion du transport Colissimo</description>
+ 	<rubrique>transport</rubrique>
+	<lien>http://contrib.thelia.fr/contrib.php?prefixe=colissimo</lien>
+	<documentation>Readme.txt</documentation>
+ 	<etat>production</etat>
+	<install>http://contrib.thelia.fr/client/contrib/colissimo.zip</install>
+</plugin>

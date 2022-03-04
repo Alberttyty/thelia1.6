@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>CKEditor</titre>
+    <chapo>Ce plugin ajoute l'éditeur WYSIWYG CKEditor (associé à l'outil de gestion de fichiers KCFINDER) dans différentes pages de l'interface d'administration</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.1</version>
+  <auteur>
+    <nom>Mathieu Ludwig - Pixel Communication</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.4</thelia>
+  <etat>developpement</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

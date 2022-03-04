@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+#INCLURE "meta.html"
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="subwrapper">
+		#INCLURE "entete.html"
+		<div id="chemin">
+        	Vous &ecirc;tes ici :<a href="#URLSOMMAIRE">Accueil boutique</a> / <THELIA_chemrub type="CHEMIN" rubrique="#RUBRIQUE_ID"><THELIA_rubdetchem type="RUBRIQUE" id="#ID"><a href="#URL">#TITRE</a> /</THELIA_rubdetchem></THELIA_chemrub>Recherche : #PRODUIT_MOTCLE
+		</div>
+		#INCLURE"menu.html"
+		<div id="contenuPageRubrique">
+			<h2>Votre recherche : "#PRODUIT_MOTCLE"</h2>
+			<T_PROD>
+			<!--
+			Utilisez le param�tre exact="1" pour rechercher exactement les mots indiqu�s
+			Les param�tres mode et exact doivent �tre report�s dans les boucles de pagination
+			-->
+			<THELIA_PROD type="RECHERCHE" mode="et" exact="0" boucle="produit" rubrique="#RUBRIQUE_ID" classement="inverse" motcle="#PRODUIT_MOTCLE" num="12">
+			<div class="petitBlocProduit">
+                <h3><a href="#URL">#TITRE</a></h3>
+                <div class="contenu">
+					<a href="#URL" class="image"><THELIA_IMAGE type="IMAGE" num="1" produit="#ID"  largeur="140" >
+					<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td align="center" valign="middle">
+								<img src="#IMAGE" alt="#PRODTITRE" title="#PRODTITRE"/>
+							</td>
+						</tr>
+					</table>
+					</THELIA_IMAGE></a>
+                    <div class="description">
+						<span class="chapo">#CHAPO</span>
+						<span class="prixProduit">#PROMO[#PRIX2 &euro; <span class="chapo">au lieu de #PRIX &euro;</span>][#PRIX]</span>
+                		<p><a class="acheter" href="#PANIER"><span><span>Ajouter au panier</span></span></a></p>
+                		<p><a class="acheter" href="#URL"><span><span>En savoir +</span></span></a></p>
+                    </div>
+				</div>
+			</div>
+			#FILTRE_modulo(#COMPT||2||<div class="separation"></div>)
+            </THELIA_PROD>
+            <div id="pages">
+            	<!--
+				Les param�tres mode et exact doivent avoir la m�me valeur que dans la boucle produit
+				-->
+                <THELIA_PAGEPREC type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" typeaff="0" motcle="#PRODUIT_MOTCLE"  avance="precedente">
+                <a href="#URLFOND(recherche,rechpage=#PAGE_PREC&motcle=#MOTCLE)" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+                </THELIA_PAGEPREC>
+                <THELIA_CPAGE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="1">
+                |
+                <THELIA_PAGECONT_PASCOUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" courante="0" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+                <a href="#URLFOND(recherche,rechpage=#PAGE_NUM&motcle=#MOTCLE)" class="LIEN_pages">#PAGE_NUM</a>
+                </THELIA_PAGECONT_PASCOUR>
+                <THELIA_PAGECONT_COUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" courante="1" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+                #PAGE_NUM
+                </THELIA_PAGECONT_COUR>
+                </THELIA_CPAGE>
+                <THELIA_PAGE_SUIVANTE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="0" avance="suivante">
+                |
+                <a href="#URLFOND(recherche,rechpage=#PAGE_SUIV&motcle=#MOTCLE)" class="LIEN_pages">Page suivante</a>
+                </THELIA_PAGE_SUIVANTE>
+            </div>
+            </T_PROD>
+            <p><strong>Nous sommes d&eacute;sol&eacute;s, aucun r&eacute;sultat ne correspond &agrave; votre recherche.</strong></p>
+            <//T_PROD>
+		</div>
+		#INCLURE "pied.html"
+		#INCLURE "signature.html"
+	</div>
+</div>
+</body>
+</html>

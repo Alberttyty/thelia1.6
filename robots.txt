@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /gestion/
+Crawl-delay: 1

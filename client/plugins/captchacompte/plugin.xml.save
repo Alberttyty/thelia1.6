@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Captchacompte</nom>
+ 	<version>1</version>
+ 	<prefix>captchacompte</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Plurimédia</auteur>
+ 	<thelia>1.5.1</thelia>
+ 	<description>Code captcha pour créer compte</description>
+ 	<etat>production</etat>
+</plugin>

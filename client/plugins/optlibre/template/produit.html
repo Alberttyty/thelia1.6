@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	#INCLURE "meta.html"
+
+	<script type="text/javascript" src="client/plugins/optlibre/jquery/jquery.js"></script>
+
+	<script type="text/javascript">
+		function rafraichir(){
+			if(document.getElementById('optlibre').value)
+				$.ajax({type:'GET', url:'prix.php', data:'id_optlibre='+ document.getElementById('optlibre').value,success:function(html){$('#prix').html(html)}})
+    }
+</script>
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body>
+
+<!-- wrapper & subwrapper -->
+	
+<div id="wrapper">
+	<div id="subwrapper">
+	
+	#INCLURE "entete.html"
+		
+<!-- chemin -->	
+	 
+		<div id="chemin">
+		Vous &ecirc;tes ici :
+		<a href="index.php" class="LIEN_chemin">Accueil boutique</a> / 
+		<THELIA_chemrub type="CHEMIN" rubrique="#RUBRIQUE_ID">
+		
+		<THELIA_rubdetchem type="RUBRIQUE" id="#ID">
+		<a href="#URL" class="LIEN_chemin">#TITRE</a> /
+		</THELIA_rubdetchem>
+		</THELIA_chemrub> 
+
+		<THELIA_rubcour type="RUBRIQUE" id="#RUBRIQUE_ID">
+			<a href="#URL" class="LIEN_chemin">#TITRE</a> /
+		</THELIA_rubcour>
+		
+		#PRODUIT_NOM 
+
+		
+		</div>
+					
+<!-- contenu -->
+	
+		<div id="content">
+		
+		#INCLURE"menu.html"
+		
+			<div id="contenu">
+			<THELIA_PROD type="PRODUIT" ref="#PRODUIT_REF"> 
+			
+<!-- Titre du produit -->
+
+				<div class="titrePage">
+				<h2>#TITRE</h2>
+				</div>
+
+			
+<!-- Détail du produit -->
+
+				<div>
+				<THELIA_img type="IMAGE" num="1" produit="#ID" largeur="300">
+			 	<a href="#" onclick="window.open('imgpop.php?ref=#PRODUIT_REF&amp;id_image=#ID', '', 'toolbar,width=600,height=840')">
+				<img src="#IMAGE"  alt="#PRODTITRE" title="#PRODTITRE" border="0" class="contourImage"  id="photozoom" /></a>		   
+				</THELIA_img>
+					<div class="ficheProduit">
+				 		<div class="chapoProduit">
+						#CHAPO
+						</div>
+						
+					<form action="panier.php" method="post">
+						<input type="hidden" name="action" value="ajouter">
+						<input type="hidden" name="ref" value="#REF">
+						
+				 		<div class="descriptionProduit">
+						#DESCRIPTION
+				
+				<T_dec>		
+						<select id="optlibre" name="id_optlibre" onChange="rafraichir()">
+						<option value="">Votre choix ...</option>
+						<THELIA_dec type="OPTLIBRE" boucle="option" ref="#PRODUIT_REF">
+						<option value="#ID">#DECLINAISON</option>
+						</THELIA_dec>
+						</select>
+				</T_dec>
+				
+				<//T_dec>
+				
+						</div>
+				 		<div class="prixProduit">
+						<div id="prix">A partir de #PRIX &euro;</prix>
+						</div>
+						<input type="submit" value="Ajouter au panier" />
+					</div> 
+					</form>
+				</div>
+			</THELIA_PROD>
+							
+<!-- Retour à la page précédente -->	
+
+				<div id="pages">
+				<THELIA_PAGEPREC type="PAGE" rubrique="#RUBRIQUE_ID" caracteristique="#CARACTERISTIQUE_ID" caracdisp="#CARACTERISTIQUE_DISP" num="9" typeaff="0">
+				<a href="rubrique.php?id_rubrique=#RUBRIQUE_ID&page=#PAGE_PREC" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+				</THELIA_PAGEPREC>
+				</div>
+			</div>
+			#INCLURE "pied.html"
+		</div>
+	</div>
+	#INCLURE "signature.html"
+</div>
+</body>
+</html>

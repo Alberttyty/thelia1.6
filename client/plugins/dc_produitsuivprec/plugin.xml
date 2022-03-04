@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Produit suivant/précédent</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet de connaitre le produit précédent et le produit suivant.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.1</version>
+  <auteur>
+    <nom>POIRIER Laurent - laurent@duo-concept.fr</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

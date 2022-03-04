@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Redirection si hors ligne</titre>
+    <chapo></chapo>
+    <description>Redirection 302 vers le parent si hors ligne</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Mathieu Ludwig</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <urlmiseajour></urlmiseajour>
+</plugin>

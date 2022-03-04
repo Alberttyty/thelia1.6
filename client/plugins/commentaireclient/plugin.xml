@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Commenter un client</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet de laisser un commentaire sur un client depuis le back office.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.1</version>
+  <auteur>
+    <nom>Manuel Raynaud - mraynaud@openstudio.fr;Franck Allimant - info@cqfdev.fr</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.1</thelia>
+  <etat>production</etat>
+  <documentation>LISEZMOI.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le plugin.xml original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Verifprix</titre>
+    <chapo>Vérifier si prix à 0 lors de l'enregistrement d'une fiche</chapo>
+    <description></description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.1</version>
+  <auteur>
+    <nom>Mathieu Ludwig - Pixel Communication</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.4</thelia>
+  <etat>developpement</etat>
+  <documentation></documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>SEO Relation</titre>
+    <chapo></chapo>
+    <description>Permet d'optimiser le SEO dans le cadre d'une pagination en ajoutant les balises link en en-tête HTML.</description>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Thierry Caresmel</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>contact@pixel-plurimedia.fr</email>
+    <web>http://pixel-plurimedia.fr</web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+</plugin>

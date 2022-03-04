@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Ventes déclinaison</titre>
+    <chapo></chapo>
+    <description>Ce plugin permet de récupérer la déclinaison d'un produit vendu.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>0.9</version>
+  <auteur>
+    <nom>Thierry CARESMEL</nom>
+    <societe>Pixel Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web>pixel-plurimedia.fr</web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

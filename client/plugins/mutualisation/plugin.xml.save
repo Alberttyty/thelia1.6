@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+       <nom>Remise Vin</nom>
+       <version>1.0</version>
+       <prefix>remisevin</prefix>
+       <type>classique</type>
+       <auteur>Mathieu Ludwig</auteur>
+       <thelia>1.4.1</thelia>
+       <description>Remise sur le panier a partir d un certain nombre de bouteilles</description>
+       <lien></lien>
+       <documentation></documentation>
+       <etat>production</etat>
+       <install></install>
+</plugin>

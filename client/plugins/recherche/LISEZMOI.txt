@@ -1,0 +1,200 @@
+PLUGIN DE RECHERCHE AVANCEE
+---------------------------
+
+Ce plugin permet une recherche dans vos produits, rubriques ou contenus. Les
+mots saisis par votre client sont normalisés suivant l'algorithme Paice/Husk, ce
+qui permet d'obtenir de meilleurs résultats de recherche:
+
+Exemple: "rouges", "rouge", "rougeatre", "rougeaud" sont normalis�s en "roug",
+ce qui permet de remonter tous les produits en rapport au rouge.
+
+Contact et support: Franck Allimant (thelia@allimant.org).
+Version PHP du stemmer Paice/Husk par Alexis Ulrich (http://alx2002.free.fr).
+
+MISE EN PLACE
+-------------
+
+Dans votre form de recherche, proposer les options supplémentaires de recherche:
+
+<form action="#URLRECHERCHE" method="post" name="recherche" id="recherche">
+	<input name="motcle" type="text" value='Recherche' onclick="this.value='';"  />
+	<p><button type="submit" class="bouton"><span><span>OK</span></span></button></p>
+	<input style="width: auto;" type="radio" name="recherche_mode" value="et" checked="checked"/>Tous les mots<br />
+	<input style="width: auto;" type="radio" name="recherche_mode" value="ou" />Au moins un des mots<br />
+	<input style="width: auto;" type="checkbox" name="recherche_exacte" value="1" />Rechercher exactement
+</form>
+
+Dans la page de recherche (recherche.html), utiliser la boucle de recherche de produit du plugin.
+Pour ce faire, remplacer:
+
+   <THELIA_PROD type="PRODUIT" rubrique="#RUBRIQUE_ID" classement="inverse" motcle="#PRODUIT_MOTCLE" num="12">
+
+par:
+
+   <THELIA_PROD type="recherche" mode="#RECHERCHE_MODE" exact="#RECHERCHE_EXACTE" boucle="produit" rubrique="#RUBRIQUE_ID" classement="inverse" motcle="#PRODUIT_MOTCLE" num="12">
+
+Il est aussi possible de fixer le mode de recherche (et / ou) dans la page de
+recherche, sans modifier le formulaire de recherche:
+
+<THELIA_PROD type="recherche" mode="et" boucle="produit" ... >
+
+<THELIA_PROD type="recherche" mode="ou" boucle="produit" ... >
+
+
+Adapter enfin les boucles de pagination dans la page de recherche (Thelia 1.5.1) :
+
+    <THELIA_PAGEPREC type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" typeaff="0" motcle="#PRODUIT_MOTCLE"  avance="precedente">
+    <a href="#URLFOND(recherche,rechpage=#PAGE_PREC&motcle=#MOTCLE)" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+    </THELIA_PAGEPREC>
+    <THELIA_CPAGE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="1">
+    |
+    <THELIA_PAGECONT_PASCOUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" courante="0" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    <a href="#URLFOND(recherche,rechpage=#PAGE_NUM&motcle=#MOTCLE)" class="LIEN_pages">#PAGE_NUM</a>
+    </THELIA_PAGECONT_PASCOUR>
+    <THELIA_PAGECONT_COUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" courante="1" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    #PAGE_NUM
+    </THELIA_PAGECONT_COUR>
+    </THELIA_CPAGE>
+    <THELIA_PAGE_SUIVANTE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="0" avance="suivante">
+    |
+    <a href="#URLFOND(recherche,rechpage=#PAGE_SUIV&motcle=#MOTCLE)" class="LIEN_pages">Page suivante</a>
+    </THELIA_PAGE_SUIVANTE>
+
+C'est tout. Un exemple de page de recherche figure dans le repertoire 'template' du plugin.
+
+
+
+            .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+BOUCLES
+-------
+
+Le plugin propose quatre boucles, pour chercher dans les produits, les rubriques
+ou les contenus, et pour paginer les résultats
+
+Il �tend les boucles produit, rubrique et contenu originales de Thélia. Il est
+donc possible d'utiliser les paramètres de ces boucles en plus des paramètres
+sp�cifiques, qui sont:
+
+  mode: valeurs possibles: "et", "ou". Si le param�tre vaut "et", le plugin
+        rechercher les éléments qui contiennent tous les mots à rechercher
+
+        Si le paramètre vaut "ou", le plugin rechercher les éléments qui
+        contiennent au moins un des mots à rechercher
+
+  exact: valeurs possibles 0 ou 1. Si le paramètre vaut 1, la recherche est
+         effectuée exactement sur les mots entrés, sans normalisation.
+
+Rechercher des produits:
+<THELIA_PROD type="recherche" mode="et" boucle="produit" motcle="#PRODUIT_MOTCLE">
+...
+</THELIA_PROD>
+
+Rechercher des rubriques:
+<THELIA_RUB type="recherche" mode="et" boucle="rubrique" motcle="#PRODUIT_MOTCLE">
+...
+</THELIA_RUB>
+
+Rechercher du contenu:
+<THELIA_CNT type="recherche" mode="et" boucle="contenu" motcle="#PRODUIT_MOTCLE">
+...
+</THELIA_CNT>
+
+Exemple: Dans la page recherche.html du template de base, pour utiliser ce plugin
+au lieu de la recherche de base de Thélia, remplacer:
+
+<THELIA_PROD type="PRODUIT" rubrique="#RUBRIQUE_ID" classement="inverse" motcle="#PRODUIT_MOTCLE" num="12">
+
+par:
+
+<THELIA_PROD type="recherche" mode="et" boucle="produit" rubrique="#RUBRIQUE_ID" classement="inverse" motcle="#PRODUIT_MOTCLE" num="12">
+
+BOUCLE 'page'
+-------------
+
+Cette boucle permet de paginer les r�sultats. Les param�tres d'entr�e sont les
+m�mes que la boucle PAGE de Th�lia, mis � part type="RECHERCHE" et boucle="PAGE".
+
+type_page permet de sp�"cifier quel type de pagination effectuer, et peut prendre les
+valeurs produit, rubrique, ou contenu
+
+Les variables sont elles aussi identiques � celles de la boucle PAGE de Th�lia,
+plus:
+
+   #MOTCLE: les param�tres de recherche, qui doivent �tre plac�s dans les
+                URLs de changement de page. Par exemple:
+                recherche.php?rechpage=#PAGE_NUM&#MOTCLE
+
+ATTENTION: le param�tre d�signat la pge dans l'URL est 'rechpage'. Ce param�tre, ainsi que le
+param�tre 'motcle' doivent �tre pass�s dans les URLs de pagination.
+
+Exemple bas� sur la pagination des r�sultats du template de base de Th�lia:
+
+Pour Thelia 1.5.1 et suivant :
+
+    <THELIA_PAGEPREC type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" typeaff="0" motcle="#PRODUIT_MOTCLE"  avance="precedente">
+    <a href="#URLFOND(recherche,rechpage=#PAGE_PREC&motcle=#MOTCLE)" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+    </THELIA_PAGEPREC>
+    <THELIA_CPAGE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="1">
+    |
+    <THELIA_PAGECONT_PASCOUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" courante="0" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    <a href="#URLFOND(recherche,rechpage=#PAGE_NUM&motcle=#MOTCLE)" class="LIEN_pages">#PAGE_NUM</a>
+    </THELIA_PAGECONT_PASCOUR>
+    <THELIA_PAGECONT_COUR type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" courante="1" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    #PAGE_NUM
+    </THELIA_PAGECONT_COUR>
+    </THELIA_CPAGE>
+    <THELIA_PAGE_SUIVANTE type="RECHERCHE" boucle="PAGE" mode="et" exact="0" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="0" avance="suivante">
+    |
+    <a href="#URLFOND(recherche,rechpage=#PAGE_SUIV&motcle=#MOTCLE)" class="LIEN_pages">Page suivante</a>
+    </THELIA_PAGE_SUIVANTE>
+
+Pour Thelia 1.4.x :
+
+    <THELIA_PAGEPREC type="RECHERCHE" boucle="PAGE" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" typeaff="0" motcle="#PRODUIT_MOTCLE" avance="precedente">
+    <a href="recherche.php?rechpage=#PAGE_PREC&motcle=#MOTCLE" class="LIEN_pages">Page pr&eacute;c&eacute;dente</a>
+    </THELIA_PAGEPREC>
+    <THELIA_CPAGE type="RECHERCHE" boucle="PAGE" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="1">
+    |
+    <THELIA_PAGECONT_PASCOUR type="RECHERCHE" boucle="PAGE" type_page="PRODUIT" rubrique="#RUBRIQUE_ID"  num="12" courante="0" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    <a href="recherche.php?rechpage=#PAGE_NUM&motcle=#MOTCLE" class="LIEN_pages">#PAGE_NUM</a>
+    </THELIA_PAGECONT_PASCOUR>
+    <THELIA_PAGECONT_COUR type="RECHERCHE" boucle="PAGE" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" courante="1" motcle="#PRODUIT_MOTCLE" pagecourante="#PAGE_NUM" max="10" typeaff="1">
+    #PAGE_NUM
+    </THELIA_PAGECONT_COUR>
+    </THELIA_CPAGE>
+    <THELIA_PAGE_SUIVANTE type="RECHERCHE" boucle="PAGE" type_page="PRODUIT" rubrique="#RUBRIQUE_ID" num="12" max="10" motcle="#PRODUIT_MOTCLE" typeaff="0" avance="suivante">
+    |
+    <a href="recherche.php?rechpage=#PAGE_SUIV&motcle=#MOTCLE" class="LIEN_pages">Page suivante</a>
+    </THELIA_PAGE_SUIVANTE>
+
+
+            .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+SUBSTITUTIONS
+-------------
+
+La valeur du param�tre de form "recherche_mode" (et / ou) est disponible dans la
+variable #RECHERCHE_MODE.
+
+
+            .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+HISTORIQUE
+----------
+
+30-03-2010: 1.0.0 : Version initiale
+31-03-2010: 1.1.0 : Ajout de la recherche dans les rubriques
+31-03-2010: 1.2.0 : Ajout de la pagination des r�sultats
+31-03-2010: 1.2.1 : Correction de quelques bugs
+08-06-2010: 1.2.2 : Ajout du param�tre 'exact' a la boucle
+                    Correction d'un probl�me sur les accents (UTF-8 dans le stemmer)
+08-06-2010: 1.2.3 : Correction des bugs de recherche sur contenu et rubrique
+22-12-2011: 1.2.4 : La recherche par re�f�rence produit est possible.
+
+
+--
+Fin du fichier LISEZMOI.txt

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Chèque</titre>
+    <chapo></chapo>
+    <description>Module de paiement par chèque.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.2</version>
+  <auteur>
+    <nom>Yoan De Macedo - yoandm@gmail.com</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>paiement</type>
+  <prerequis/>
+  <thelia>1.5.1</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

@@ -1,0 +1,310 @@
+/* Général */
+
+img {
+   border: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	padding: 0;
+	text-align: center;
+	marginp: 0;
+	margin: 0;
+	background-color: #2593d7;
+	background-image: url(gfx/fondBody.jpg);
+	background-repeat: repeat-x;
+	color: #1d364e;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #1d364e;
+}
+
+a:hover {
+color: #ec8000;
+text-decoration: underline;
+}
+
+a:hover {
+color: #ff7f00;
+text-decoration: underline;
+}
+
+h1 {
+display: none;
+float: left;
+}
+
+h2 {
+	font-size: 24px;
+	background-image: url(gfx/puceH2.gif);
+	background-repeat: no-repeat;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 20px;
+	background-position: 0px 3px;
+}
+
+h3 {
+	font-size: 18px;
+	background-image: url(gfx/puceH3.gif);
+	background-repeat: no-repeat;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 20px;
+	background-position: 0px 3px;
+}
+
+h4 {
+	font-size: 10px;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+.img {
+	border: 1px solid #EC8000;
+	float: left;
+	margin-right: 10px;
+}
+
+/* global wrapper */
+
+#wrapper {
+	width: 770px;
+	text-align: center;
+	overflow: visible;
+	position: relative;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	padding-right: 0;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-top: 0;
+	clear: both;
+}
+
+/* entete */
+
+#entete {
+	text-align: left;
+	background-image: url(gfx/fondEntete.gif);
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 770px;
+	height: 100px;
+}
+
+/* menu */
+
+#contourMenu {
+	text-align: left;
+	background-image: url(gfx/fondMenu.gif);
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 770px;
+	height: 100px;
+	background-repeat: no-repeat;
+}
+
+
+/* contenu */
+
+#contenu {
+	float: left;
+	background-image: url(gfx/fondContenu.gif);
+	background-repeat: repeat-y;
+	padding: 0;
+	margin: 0;
+	width: 770px;
+}
+
+/* colonne du centre */
+
+#colonneDeGauche {
+	text-align: left;
+	width: 700px;
+	float: left;
+	padding: 0;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
+#colonneDeGaucheContenu {
+        text-align: left;
+        width: 580px;
+        float: left;
+        padding: 0;
+        margin-left: 15px;
+        margin-right: 10px;
+}
+
+
+#chapeau {
+	clear: both;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #1D364E;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 20px;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 10px;
+	padding-left: 0;
+}
+
+.lireLaSuite {
+	clear: both;
+	text-align: left;
+	margin: 0;
+	padding-top: 3px;
+	padding-right: 0;
+	padding-bottom: 3px;
+	padding-left: 0;
+}
+
+.article {
+	clear: both;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #1D364E;
+	font-size: 11px;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 20px;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 10px;
+	padding-left: 0;
+}
+
+/* colonne de droite */
+
+#colonneDeDroite {
+	padding: 0;
+	text-align: left;
+	width: 320px;
+	float: left;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+.lien {
+	clear: both;
+	padding: 0;
+	text-align: center;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 5px;
+	margin-left: 0;
+}
+
+#dejaThelia {
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 12px;
+	margin-left: 12px;
+	text-align: center;
+	width: 296px;
+}
+.titreDejaThelia {
+	text-align: center;
+	margin: 0;
+	clear: both;
+	padding: 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #00496e;
+}
+.contenuDejaThelia {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+
+/* plan du site */
+
+#planDuSite {
+	float: left;
+	background-image: url(gfx/fondPlanDuSite.gif);
+	background-repeat: repeat-y;
+	width: 770px;
+	margin-top: 2px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding: 0;
+	font-size: 10px;
+}
+#contenuPlanDuSite {
+	clear: both;
+	text-align: left;
+	margin: 0;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 0;
+	padding-left: 15px;
+}
+#footerPlanDuSite {
+	float: left;
+	background-image: url(gfx/footerPlanDuSite.gif);
+	background-repeat: no-repeat;
+	width: 770px;
+	padding: 0;
+	margin: 0;
+	height: 17px;
+}
+#pageInt {
+	text-align: left;
+	width: 740px;
+	float: left;
+	margin-left: 15px;
+	padding: 0;
+	margin-right: 15px;
+}
+
+.col{
+	width: 250px;
+	padding-top: 10px;
+	padding-bottom: 2px;
+	float: left;
+
+}
+
+.erreur {
+	font-size: 15px;
+	color: red;
+}
+
+.valide {
+	font-size: 15px;
+	color: green;
+}

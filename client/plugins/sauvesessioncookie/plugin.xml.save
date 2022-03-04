@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Sauvsessioncookie</nom>
+ 	<version>1</version>
+ 	<prefix>sauvsessioncookie</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Plurimédia</auteur>
+ 	<thelia>1.5.0</thelia>
+ 	<description>Sauvegarder la session dans une table</description>
+ 	<etat>production</etat>
+</plugin>

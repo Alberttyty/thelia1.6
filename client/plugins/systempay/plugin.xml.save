@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Systempay</nom>
+ 	<version>1.0</version>
+ 	<prefix>systempay</prefix>
+	<type>paiement</type>
+ 	<auteur>Lyra Network</auteur>
+ 	<thelia>1.5.1</thelia>
+ 	<description>Module de paiement sécurisé par carte bancaire via Systempay.</description>
+ 	<rubrique>paiement</rubrique>
+ 	<etat>production</etat>
+</plugin>

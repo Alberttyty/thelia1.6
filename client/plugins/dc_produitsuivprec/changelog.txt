@@ -1,0 +1,9 @@
+****************************** ChangeLog 1.0 ******************************
+
+- Nouveau: Reprise du plugin "prodsuivprec" de 2007 par Elodie Montel
+	- Correction de bugs
+	- Ajout du classement par TITRE & TITREINVERSE
+	
+****************************** ChangeLog 1.1 ******************************
+
+- Conversion pour Thélia 1.5

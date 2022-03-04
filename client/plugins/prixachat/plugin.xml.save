@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Prix d achat</nom>
+ 	<version>1</version>
+ 	<prefix>prixachat</prefix>
+	<type>classique</type>
+ 	<auteur>Mathieu Ludwig - Pixel Plurimédia</auteur>
+ 	<thelia>1.5.1</thelia>
+ 	<description>Prix d achat</description>
+ 	<etat>production</etat>
+</plugin>

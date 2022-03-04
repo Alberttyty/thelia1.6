@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>Mondial Relay</titre>
+    <chapo></chapo>
+    <description>Module de transport Mondialrelay</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>2.0.2</version>
+  <auteur>
+    <nom>Benoît PASCAL - benoit@benoitpascal.fr;Franck Allimant - thelia@allimant.org</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>transport</type>
+  <prerequis/>
+  <thelia>1.5.1</thelia>
+  <etat>production</etat>
+  <documentation>LISEZMOI.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

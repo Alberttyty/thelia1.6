@@ -1,0 +1,177 @@
+#PARAM_FOND_securise=1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	#INCLURE "template/meta.html"
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="subwrapper">
+		#INCLURE "template/entete.html"
+		<div id="chemin">::navigation:: : <a href="#URLSOMMAIRE">::accueil::</a> /	::coordonnees::</div>
+		#INCLURE "template/menu.html"
+        <div id="contenu">
+            <div id="etapesDeCommande">
+                <ul>
+                    <li><span>1</span>::panier::</li>
+                    <li class="selection"><span class="chiffreSelection">2</span>::facturationlivraison::</li>
+                    <li><span>3</span>::verifcommande::</li>
+                    <li><span>4</span>::paiementsecurise::</li>
+                </ul>
+            </div>
+            <h2>::coordonnees::</h2>
+            <div class="adresseDeFacturation">
+                <h3>::adressefacturation::</h3>
+                <div class="contenu">
+                    #CLIENT_RAISON #CLIENT_PRENOM #CLIENT_NOM<br />
+                    #CLIENT_ADRESSE1 #CLIENT_ADRESSE2 #CLIENT_ADRESSE3<br />
+                    #CLIENT_CPOSTAL #CLIENT_VILLE<br />
+                    #CLIENT_PAYS
+                </div>
+                <a href="#URLCOMPTEMODIFIER" class="modifierOuAjouter">::modifadresse::</a>
+            </div>
+            <div class="adresseDeLivraison">
+                <h3>::adresselivraison:: </h3>
+                <THELIA_adrcours type="ADRESSE" adresse="#ADRESSE_ACTIVE">
+                <div class="contenu">
+                    #RAISON #PRENOM #NOM<br />
+                    #ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+                    #CPOSTAL #VILLE<br />
+                    <THELIA_pays type="PAYS" id="#PAYS">#TITRE</THELIA_pays>
+                </div>
+                <THELIA_adrmodcours type="ADRESSE" adresse="#ADRESSE_ACTIVE" defaut="0">
+                <a href="#URLFOND(livraison_modifier,adresse=#ID)" class="modifierOuAjouter">::modifadresse::</a>
+                </THELIA_adrmodcours>
+                </THELIA_adrcours>
+                <h4>::selectautreadresselivraison::</h4>
+                <ul>
+                    <li><a href="#URLFOND(adresse,action=modadresse&amp;adresse=0)">::adressefacturationdefaut::</a></li>
+                    <li><THELIA_adr type="ADRESSE" client="#CLIENT_ID"><a href="#URLFOND(adresse,action=modadresse&amp;adresse=#ID)">#LIBELLE</a></THELIA_adr></li>
+                </ul>
+                <a href="#URLFOND(livraison_adresse)" class="modifierOuAjouter">::ajoutnouvelleadresse::</a>
+            </div>
+            <h2>::choixmodelivraison:: </h2>
+            <div class="choixDeLaLivraison">
+            	<ul>
+
+<REM> -- DEBUT MODIF Mondial Relay -------------------------------------- </REM>
+
+					<THELIA_transport type="TRANSPORT" nom="mondialrelay">
+               			<li>
+               				<a href="#" onclick="return false;">
+               					<span class="modeDeLivraison">#TITRE / #PORT &euro;</span>
+               					<span class="choisir">Listes des Points Relais</span>
+               				</a>
+               			</li>
+
+                 		<T_relaycolis>
+
+							<REM> -- DEBUT affichage de la carte -------- </REM>
+							<REM> enlever le code entre les commentaires debut/fin affichage de la carte pour ne pas afficher cette carte)</REM>
+
+                 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                 			<script type="text/javascript" src="client/plugins/mondialrelay/js/GM3.js"></script>
+
+                 			<script type="text/javascript">
+
+	             				$(document).ready(function () {
+	             					var prms = {
+	             						MapDiv: "relaymap",
+	             						MapPositionLatitude: 46.80000,
+	             						MapPositionLongitude: 1.69000,
+	             						MapZoom: 5,
+	             						MapScrollWheel: true,
+	             						MapStreetView: false,
+	             					};
+
+	             					GM3.Init(prms);
+
+	             					<THELIA_relaycolis type="mondialrelay" nom="mondialrelay" num="5">
+	             					GM3.AddPopupMarker(
+	             							#LATITUDE,
+	             							#LONGITUDE,
+	             							'#DETAILPR',
+	             							'width=772,height=570,status=0,menubar=0,location=0,titlebar=0',
+	             							"#NOM, #ADRESSE3, #CP #VILLE");
+	             					</THELIA_relaycolis>
+
+	             					GM3.SetGoodZoom();
+	             				});
+	             			</script>
+
+                 			<div id="relaymap" style="width: 710px; height: 300px;"></div>
+
+							<REM> -- FIN affichage de la carte ---------- </REM>
+
+                 			<script type="text/javascript">
+
+                 				function show_relay(url) {
+                 					window.open(url, "mondialrelay", 'width=772,height=570,status=0,menubar=0,location=0,titlebar=0');
+                 				}
+
+                 				function check_selection_relais() {
+                 					if ($('input[name=num_relay]:checked').length == 0) {
+                 						alert("Merci de choisi un des points relais.");
+
+                 						return false;
+                 					}
+
+                 					return true;
+                 				}
+                 			</script>
+
+                			<form action="#URLCMD" method="post" enctype="multipart/form-data" id="relaycolis" onsubmit="return check_selection_relais();">
+	                			<table>
+	                				<THELIA_relaycolis type="mondialrelay" nom="mondialrelay" num="5">
+	                				<tr>
+	                					<td><label for="NUM">#NOM, #ADRESSE3, #CP #VILLE</label></td>
+	                					<td>
+	                						<input type="radio" id="#NUM" value="#NUM" name="num_relay"/>
+	                					</td>
+	                					<td>(<a href="#DETAILPR" onclick="show_relay('#DETAILPR'); return false;">Détails</a>)</td>
+	                				</tr>
+	                				</THELIA_relaycolis>
+	                			</table>
+
+	                			<input  type="submit" id="submit_relaycolis" value="Choisissez votre Relais"/>
+                			</form>
+                		</T_relaycolis>
+                			<p>Nous n'avons pas trouvé de relais colis dans votre zone de livraison.</p>
+						<//T_relaycolis>
+
+						<REM>
+						-------------------------------------------------------
+						Offre la possibilité de choisir un autre code postal,
+						et d'afficher d'autres points relais.
+						Ce code peut être retiré si nécessaire.
+						--------------------------------------------------------
+						</REM>
+
+						<form action="#VARIABLE(urlsite)">
+							<input type="hidden" name="fond" value="adresse" value="" />
+				        	<input type="hidden" name="action" value="recherche_cp" value="" />
+				        	<div>
+				        		Trouver un point relais pour le code postal: <input type="text" name="cp_relay" value="" />
+				        		<input type="submit" value="Rechercher" />
+				        	</div>
+					    </form>
+
+                	</THELIA_transport>
+
+                    <THELIA_transport type="TRANSPORT" exclusion="mondialrelay">
+                		<li><a href="#URLCMD"><span class="modeDeLivraison">#TITRE / #PORT €</span><span class="choisir">::modelivraison::</span></a></li>
+                	</THELIA_transport>
+
+<REM> -- FIN MODIF Mondial Relay -------------------------------------- </REM>
+
+                </ul>
+            </div>
+        </div>
+        #INCLURE "template/pied.html"
+        #INCLURE "template/signature.html"
+	</div>
+</div>
+</body>
+</html>

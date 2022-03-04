@@ -1,0 +1,65 @@
+Mutualisation :
+
+- fonctions/moteur.php - ajout de require mutualisation.php
+- classes/Cnx - SITE_DIR pour require de la config
+- classes/Tlog - SITE_DIR pour $this->dir_destinations
+- classes/Parseur - SITE_DIR pour $this->cache_dir
+- admin/classes/DocumentsAdmin - FICHIER_URL pour chemin_objet
+- admin/classes/ImagesAdmin - FICHIER_URL pour chemin_objet
+- admin/pre.php ajout de require mutualisation.php
+- plugins/ckeditor/kcfinder/conf/config FICHIER_URL dans uploadURL
+- fonctions/image.php SITE_DIR et FICHIER_URL dans la fonction redim()
+- fonctions/boucles.php
+                      Images : ajout de FICHIER_URL pour #IMAGE + #FICHIER et SITE_DIR pour $mesdimensions
+                      RSS : FICHIER_URL pour $rss_cache
+
+- fonctions/redimlive.php - ajout de require mutualisation.php et changement du chemin pour readfile() et stat()
+- client/pdf/facture.php SITE_DIR dans $reptpl
+- admin/livraison.php SITE_DIR dans $reptpl
+- admin/accueil.php - Commenter les versions de Th�lia
+
+
+Fichier du core modifiés :
+
+- Classes/Mail.class.php - Fonction construct (pour les images) et function envoyer (PB d'encodage UTF8) et Sender + Domaine et inclure class.smtp.php
+
+- Fonctions/images.php - Fonction redim (pour convert)
+- Fonctions/boucles.php - Boucleimage (hauteur et largeur des images)
+- Fonctions/boucles.php - Boucle Transport (mettre compt++ apres if ($port < $montantmini) continue;)
+- Fonctions/boucles.php - Boucle Produit (classement par nouveaute)
+- Fonctions/boucles.php - Boucle Produit ($ligne = lireTag($args, "ligne", "int+-"))
+- Fonctions/boucles.php - Boucle boucleCaracdisp (classement aleatoire)
+- Fonctions/boucles.php - Boucle boucleCaracdisp crit�re avecproduit et avecproduitenstock
+- Fonctions/nettoyage.php - Commenter le ".html" dans le return de eregurl(), pour avoir des URLs sans extension
+- Fonctions/nettoyage.php - Caract�res speciaux 1/2 dans ereg_caracspec()
+- Fonctions/port.php - Ajout de la transmission de la variable $port ->appel_module("port", $frais , $port);
+
+- lib/crypt - Copier la librairie
+
+- lib/phpMailer - Copier la librairie
+
+- client/ckeditor/ckeditor/plugins
+  ajouter les plugins : panelbutton,colorbutton,font,div,justify et showblocks
+  ajouter moonocolor dans les skins
+  client/ckeditor/kcfinder/config.php
+  ajouter umask(0022) - sinon probl�me de droit
+
+- admin/classes/FichierAdminBase.php
+  Ajouter la ligne ci-dessous dans function modifier()
+  ActionsModules::instance()->appel_module('modfichier',$objdesc);
+
+- admin/commande_details.php
+  Ajouter $disabled au <select> du statut
+
+- admin/produit.php
+  Ajout de urlencode() dans l'url produit_modifier.php?ref=
+
+- admin/parcourir.php
+  Ajout de encodeURIComponent() dans la function JS supprimer_produit(ref, parent)
+
+- admin/recherche.php
+  Ajout de urlencode() dans l'url produit_modifier.php?ref=
+  Ajout de encodeURIComponent() dans la function JS supprimer_produit(ref, parent)
+
+- Gestion/classes/FichierAdminBase.class.php
+  Ajouter exec('convert '.$fichier.' -quality 80 -resize 1920x1600\> '.$fichier); pour l'upload de JPG sur le BackOffice

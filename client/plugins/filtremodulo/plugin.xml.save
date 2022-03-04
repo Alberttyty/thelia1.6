@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Modulo</nom>
+ 	<version>1.0</version>
+ 	<prefix>filtremodulo</prefix>
+	<type>classique</type>
+ 	<auteur>Yoan De Macedo - yoan@octolys.fr</auteur>
+ 	<thelia>1.4.0</thelia>
+ 	<description>Ce plugin de type filtre, permet de vérifier qu'un nombre est bien multiple d'un autre.</description>
+	<rubrique>filtre</rubrique>
+	<lien>http://contrib.thelia.fr/contrib.php?prefixe=filtremodulo</lien>
+	<documentation>Readme.txt</documentation>
+ 	<etat>production</etat>
+	<install>http://contrib.thelia.fr/client/contrib/filtremodulo.zip</install>
+</plugin>

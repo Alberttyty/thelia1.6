@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<descriptif lang="fr">
+		<titre>Title et meta description</titre>
+		<chapo></chapo>
+		<description>
+			Plugin permettant de personnaliser sur chaque page du site la balise title et la balise Meta description 
+		</description>
+		<postscriptum></postscriptum>
+	</descriptif>
+	<version>2.3</version>
+	<auteur>
+		<nom>Anthony Chevrier</nom>
+		<societe>Meedle</societe> 
+		<email>anthony@meedle.fr</email>
+		<web>http://www.meedle.fr</web>
+	</auteur> 
+	<type>classique</type>
+	<prerequis/>
+	<thelia>1.5.0</thelia>
+	<etat>production</etat>
+	<documentation>Readme.txt</documentation>
+	<urlmiseajour></urlmiseajour>
+</plugin>

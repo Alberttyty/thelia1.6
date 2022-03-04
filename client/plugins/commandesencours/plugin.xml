@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<descriptif lang="fr">
+		<titre>Commandes en cours</titre>
+		<chapo></chapo>
+		<description>
+			Plugin permettant de connaître les commandes en cours pour un article
+		</description>
+		<postscriptum></postscriptum>
+	</descriptif>
+	<version>1.0</version>
+	<auteur>
+		<nom>Mathieu LUDWIG</nom>
+		<societe>Pixel Plurimédia</societe> 
+		<email></email>
+		<web></web>
+	</auteur> 
+	<type>classique</type>
+	<prerequis/>
+	<thelia>1.5.0</thelia>
+	<etat>production</etat>
+	<documentation></documentation>
+	<urlmiseajour></urlmiseajour>
+</plugin>

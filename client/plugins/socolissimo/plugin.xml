@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Migration automatique depuis le fichier original, sauvegardé dans plugin.xml.save-->
+<plugin>
+  <descriptif lang="fr">
+    <titre>SoColissimo</titre>
+    <chapo></chapo>
+    <description>Solution de transport SoColissimo</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.3</version>
+  <auteur>
+    <nom>Yoan De Macedo - yoandm@gmail.com</nom>
+    <societe></societe>
+    <email></email>
+    <web></web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.4.0</thelia>
+  <etat>production</etat>
+  <urlmiseajour></urlmiseajour>
+</plugin>

@@ -1,0 +1,11 @@
+#declibre_liste .cellule_prix{
+	width:65px;	
+}
+#declibre_liste .cellule_suppr{
+	width:30px;	
+	float:right;
+}
+#declibre_liste .cellule_lien{
+	width:80px;	
+	float:left;	
+}

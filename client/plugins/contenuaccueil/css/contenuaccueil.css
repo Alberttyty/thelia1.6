@@ -1,0 +1,36 @@
+#contenuaccueil td.designation{
+min-width:180px;	
+}
+
+#contenuaccueil table{
+	width:100%;	
+}
+
+#contenuaccueil table td{
+	padding:5px 5px 15px 5px;	
+}
+
+#contenuaccueil .form_court{
+	width:100px;	
+}
+
+#contenuaccueil .masque_canvas{
+	position:relative;
+	display:block;	
+}
+
+#contenuaccueil span.masque{
+	display:block;
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;	
+	background:#EBEDEE;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+#contenuaccueil .dates span.masque{
+		
+}

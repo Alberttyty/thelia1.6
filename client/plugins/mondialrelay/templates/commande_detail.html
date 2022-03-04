@@ -1,0 +1,91 @@
+#PARAM_FOND_securise=1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	#INCLURE "template/meta.html"
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="subwrapper">
+		#INCLURE "template/entete.html"
+		<div id="chemin">::navigation:: : <a href="#URLSOMMAIRE">::accueil::</a> / ::validcommande:: </div>
+		#INCLURE "template/menu.html"
+		<div id="contenu">
+			<THELIA_cmd type="COMMANDE" ref="#COMMANDE_REF" client="#CLIENT_ID">
+			<h2>::detailcommande::#REF </h2>
+			<THELIA_verifpay type="COMMANDE" ref="#COMMANDE_REF" statut="paye">
+			<h3>::numfacture:: #FACTURE / Date : #DATE</h3>
+			</THELIA_verifpay>
+			<table width="100%" border="0" cellspacing="0" cellpadding="5">
+				<tr>
+					<th>::produitreference::</th>
+    				<th align="center">::prixunitaire:: </th>
+   				  <th align="center">::quantite::</th>
+				  <th align="center">::total::</th>
+			  </tr>
+				<THELIA_venteprod type="VENTEPROD" commande="#ID">
+				<tr>
+					<td class="ligne">#TITRE - #REF </td>
+    				<td align="center" class="ligne">#PRIXU €</td>
+   				  <td align="center" class="ligne">#QUANTITE</td>
+				  <td align="center" class="ligne">#TOTALPROD €</td>
+				</tr>
+				</THELIA_venteprod>
+				<tr>
+					<th colspan="3">::total:: : </th>
+    				<th align="center">#TOTALCMD €</th>
+		  	  </tr>
+				<tr>
+					<td colspan="3" class="ligne">::remise:: : </td>
+    				<td align="center" class="ligne">#REMISE €</td>
+			  </tr>
+				<tr>
+					<td colspan="3">::fraislivraison::  : </td>
+    				<td align="center">#PORT €</td>
+			  </tr>
+                <tr>
+					<th colspan="3">::total:: : </th>
+					<th align="center" class="total">#TOTCMDPORT €</th>
+			  </tr>
+			</table>
+			<h3>::statut:: : #STATUT</h3>
+            <THELIA_verifpay type="COMMANDE" ref="#COMMANDE_REF" statut="paye">
+            <a href="client/pdf/facture.php?ref=#REF">::facturepdf:: </a>
+            </THELIA_verifpay>
+
+<!-- DEBUT MODIF Mondial Relay -->
+
+			<script type="text/javascript">
+			function popup_mondialrelay(url) {
+				window.open(url, "mondialrelay", 'width=772,height=570,status=0,menubar=0,location=0,titlebar=0');
+			}
+			</script>
+
+			<THELIA_adrelay type="mondialrelay" nom="suivirelay" commande="#COMMANDE_ID">
+				<h4>Livraison au point relais Mondial Relay n° #NUM</h4>
+				#NOM<br />
+				#ADRESSE3<br />
+				#CP #VILLE<br />
+				<a href="#DETAILPR" onclick="popup_mondialrelay('#DETAILPR'); return false;">Détails pratiques</a><br />
+				<TEST_suivi var="#SUIVI" test="nonvide">
+					<a href="#SUIVI" onclick="popup_mondialrelay('#SUIVI'); return false;">Suivre votre colis</a><br />
+				</TEST_suivi><//TEST_suivi>
+
+				<iframe width="390" height="230" src="#URLPLAN" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</THELIA_adrelay>
+
+ <!-- FIN MODIF Mondial Relay -->
+
+            <div class="queFaire">
+				<a class="bouton" href="#URLPREC"><span><span>::pageprecedente::</span></span></a>
+			</div>
+            </THELIA_cmd>
+		</div>
+		#INCLURE "template/pied.html"
+		#INCLURE "template/signature.html"
+	</div>
+</div>
+</body>
+</html>

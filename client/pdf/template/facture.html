@@ -1,0 +1,244 @@
+<!--
+	THELIA - Modèle de facture
+
+	Pour plus d'information sur les possibilités de mise en page, merci de consulter
+	la documentation de html2pdf: http://html2pdf.fr/
+-->
+
+<style type="text/css">
+<!--
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,th {
+		padding: 1.5mm;
+		border: 0.2mm solid #333;
+	}
+
+	th {
+		background-color: #D83C46;
+		color: #fff;
+
+		text-align: center;
+		font-weight: normal;
+	}
+
+	td.total {
+		background-color: #ccc;
+		font-weight: bold;
+	}
+-->
+</style>
+
+<page backtop="10mm" backleft="10mm" backright="10mm" backbottom="10mm">
+
+    <page_header>
+    </page_header>
+
+    <page_footer>
+    	<table>
+		<col style="width: 80%; padding: 3mm; border: none; text-align: center;" />
+		<col style="width: 20%; padding: 3mm; border: none; text-align: right;" />
+		<tbody>
+	   		<tr>
+    			<td><!-- Insérer ici les mentions légales --></td>
+    			<td>::Page:: [[page_cu]]/[[page_nb]]</td>
+	    	</tr>
+		</tbody>
+    	</table>
+    </page_footer>
+
+	<THELIA_facture type="commande" ref="#COMMANDE_REF">
+		<THELIA_devise type="devise" id="#DEVISE">
+			#SET{devise,#SYMBOLE}
+		</THELIA_devise>
+
+    <table style="padding-bottom: 5mm;">
+        <tr>
+            <td style="width:50%; padding: 0; border: none;" valign="bottom">
+
+				<div style="text-align: center; padding-bottom: 10mm;">
+					<h1>#VARIABLE(nomsite)<!-- Vous pouvez remplacer #VARIABLE(nomsite) par le nom de votre entreprise --></h1>
+					<p><!-- Insérer ici l'adresse de votre entreprise --></p>
+					<h2>::Facture n°:: #FACTURE</h2>
+				</div>
+
+				<table style="width: 100%">
+					<tr>
+						<th>::N° Commande::</th>
+						<th>::N° Client::</th>
+						<th>::Date::</th>
+					</tr>
+
+					<tr>
+						<td>#REF</td>
+						<td><THELIA_client type="client" id="#CLIENT">#REF</THELIA_client></td>
+						<td>#DATE</td>
+					</tr>
+				</table>
+			</td>
+
+            <td style="width:50%; padding: 0; border: none;" valign="bottom">
+
+				<table style="padding-bottom: 5mm;">
+					<tr>
+						<th style="width: 100%; text-align: left;">::Adresse de livraison::</th>
+					</tr>
+
+					<tr>
+						<td>
+		            		<THELIA_adrlivr type="venteadr" id="#ADRLIVR">
+		            		#RAISON #PRENOM #NOM<br />
+		            		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+		            		#CPOSTAL #VILLE<br/>
+		            		<THELIA_payslivr type="PAYS" id="#PAYS">#TITRE</THELIA_payslivr>
+		            		</THELIA_adrlivr>
+						</td>
+					</tr>
+				</table>
+
+				<table>
+					<tr>
+						<th style="width: 100%; text-align: left;">::Adresse de facturation::</th>
+					</tr>
+
+					<tr>
+						<td>
+		            		<THELIA_adrfact type="venteadr" id="#ADRFACT">
+		            		#RAISON #PRENOM #NOM<br />
+		            		#ADRESSE1 #ADRESSE2 #ADRESSE3<br />
+		            		#CPOSTAL #VILLE<br/>
+		            		<THELIA_paysfact type="PAYS" id="#PAYS">#TITRE</THELIA_paysfact>
+		            		</THELIA_adrfact>
+						</td>
+					</tr>
+				</table>
+			</td>
+         </tr>
+    </table>
+
+    <table>
+
+    <col style="width: 20%;" />
+    <col style="width: 38%;" />
+    <col style="width: 15%; text-align: right" />
+    <col style="width:  5%; text-align: right" />
+    <col style="width: 7%; text-align: right" />
+    <col style="width: 15%; text-align: right" />
+
+      <thead>
+            <tr>
+                <th style="text-align: center;">::Référence::</th>
+                <th style="text-align: center;">::Désignation::</th>
+                <th style="text-align: center;">::Prix HT::</th>
+                <th style="text-align: center;">::Qté::</th>
+                <th style="text-align: center;">::TVA::</th>
+                <th style="text-align: center;">::Montant HT::</th>
+             </tr>
+        </thead>
+
+        <tbody>
+         	<THELIA_articles type="venteprod" commande="#ID">
+	            <tr>
+	            	<td>#REF</td>
+					<td>#TITRE</td>
+					<td>#PRIXUHT #GET{devise}</td>
+					<td>#QUANTITE</td>
+					<td>#TVA%</td>
+					<td>#TOTALPRODHT #GET{devise}</td>
+				</tr>
+			</THELIA_articles>
+        </tbody>
+    </table>
+
+	<!-- Pied du tableau -->
+
+	<table>
+ 	    <col style="width: 65%;" />
+	    <col style="width: 35%;" />
+
+		<tr>
+			<td style="padding: 0; padding-top: 5mm; border: none;">
+
+	    		<table style="width: 90%; padding-bottom: 5mm;">
+
+			 	    <col style="width: 35%; text-align: right;" />
+				    <col style="width: 65%;" />
+
+					<tbody>
+	           			<tr>
+	        				<th>::Mode de règlement::</th>
+	       					<td>#PAIEMENTTITRE</td>
+	        			</tr>
+	        			<tr>
+	        				<th>::Mode de livraison::</th>
+	       					<td>#TRANSPORTTITRE</td>
+	        			</tr>
+					</tbody>
+	    		</table>
+
+	    		<table style="width: 90%;">
+					<col style="width: 100%; text-align: left;" />
+	    			<tbody>
+	        			<tr>
+	        				<th>::Zone de correspondance::</th>
+	        			</tr>
+	        			<tr>
+	        				<td style="height: 20mm;"></td>
+	        			</tr>
+					</tbody>
+	    		</table>
+			</td>
+
+			<td valign="top" style="padding: 0;padding-top: 5mm; border: none;">
+			     <table style="padding-bottom: 5mm;">
+
+				    <col style="width: 58%; text-align: right;" />
+				    <col style="width: 42%; text-align: right;" />
+
+					<tbody>
+			             <tr>
+			            	<td>::Total HT::</td>
+			            	<td>#TOTALARTICLESHT #GET{devise}</td>
+			            </tr>
+
+						<THELIA_tva type="tva" commande="#ID">
+						<tr>
+							<td>::TVA:: #TAUX%</td>
+							<td>#MONTANT #GET{devise}</td>
+						</tr>
+						</THELIA_tva>
+
+			             <tr>
+			            	<td>::Total TTC::</td>
+			            	<td>#TOTALARTICLESTTC #GET{devise}</td>
+			            </tr>
+
+						<TEST_remise var="#REMISE" test="superieur" val="0">
+			             <tr>
+			            	<td style="border-top: none;">::Remise:: #POURCEREMISE%</td>
+			            	<td style="border-top: none;">#REMISE #GET{devise}</td>
+			            </tr>
+						</TEST_remise>
+						<//TEST_remise>
+
+			            <tr>
+			            	<td>::Port::</td>
+			            	<td>#PORT #GET{devise}</td>
+			            </tr>
+
+			            <tr>
+			            	<td class="total">::Total dû::</td>
+			            	<td class="total">#TOTCMDPORT #GET{devise}</td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</td>
+		</tr>
+	</table>
+
+
+	</THELIA_facture>
+</page>

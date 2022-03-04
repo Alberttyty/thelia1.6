@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<plugin>
+	<nom>Title et meta description</nom>
+ 	<version>1.5</version>
+ 	<prefix>titlemeta</prefix>
+	<type>classique</type>
+ 	<auteur>Anthony Chevrier - anthony@meedle.fr</auteur>
+ 	<thelia>1.5</thelia>
+ 	<description>Ce plugin permet de gérer les titles et métadescription des pages.</description>
+	<rubrique>navigation</rubrique>
+	<lien>http://contrib.thelia.net/contrib.php?prefixe=titlemeta</lien>
+	<documentation>Readme.txt</documentation>
+ 	<etat>production</etat>
+	<install>http://contrib.thelia.net/client/contrib/titlemeta.zip</install>
+</plugin>

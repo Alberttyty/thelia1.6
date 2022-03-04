@@ -1,0 +1,1 @@
+Ce plugin vous permet de gérer la livraison gratuite sur place.

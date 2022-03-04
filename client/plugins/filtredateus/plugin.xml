@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <descriptif lang="fr">
+    <titre>Filtre Date Format US</titre>
+    <chapo></chapo>
+    <description>Ce plugin est un petit filtre qui permet de convertir une date FR au format US.</description>
+    <postscriptum></postscriptum>
+  </descriptif>
+  <version>1.0</version>
+  <auteur>
+    <nom>Thierry Caresmel</nom>
+    <societe>Pixek Plurimedia</societe>
+    <email>thierry@pixel-plurimedia.fr</email>
+    <web>pixel-plurimedia.fr</web>
+  </auteur>
+  <type>classique</type>
+  <prerequis/>
+  <thelia>1.5.0</thelia>
+  <etat>production</etat>
+  <documentation>Readme.txt</documentation>
+  <urlmiseajour></urlmiseajour>
+</plugin>

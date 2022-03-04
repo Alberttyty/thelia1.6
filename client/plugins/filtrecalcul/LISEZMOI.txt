@@ -1,0 +1,23 @@
+ATTENTION: CE FILTRE NE FONCTIONNE QUE SUR THELIA 1.5 ou supérieur
+
+Ce filtre permet d'effectuer des calculs arithmériques simples (addition, multiplication, soustraction, modulo),
+et d'indiquer éventuellement un nombre de décimales au résultat, un séparateur décimal, et un séparateur de
+milliers. Les paramètres du filtres sont les suivants:
+
+   - opérande gauche (obligatoire)
+   - opérateur (obligatoire, +, -, *, / ou mod)
+   - opérande droit (obligatoire)
+   - séparateur décimal, entre ' ou " (optionnel)
+   - séparateur de milliers, entre ' ou " (optionnel)
+
+Exemples d'utilisation :
+
+	#FILTRE_calcul(10,+,50) sortira 60
+	#FILTRE_calcul(4,mod,2) sortira 0
+	#FILTRE_calcul(10,+,50,2, ',') sortira 60,00
+	#FILTRE_calcul(1000.5,+,200,2, ',', ' ') sortira 1 200,5
+
+Pour installer ce filtre, copier le répertoire filtrecalcul dans le dossier client/plugins de votre Thelia,
+et activez le plugin Filtre Calcul depuis le Back Office.
+
+Auteur : Franck Allimant / CQFDev - http://www.cqfdev.fr
